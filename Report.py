@@ -44,7 +44,7 @@ head = ["BUILD", "DETAILS"]
 
 
 # display table
-f=open("/home/idm/Desktop/HDK855/Report_all.txt" , "w")
+f=open("/var/lib/jenkins/workspace/HDK_Board855_git/Report_all.txt" , "w")
 f.write("BELOW IS THE REPORT OF DEVICE : QUALCOMM 855 MOBILE HARDWARE DEVELOPMENT KIT" )
 f.write(tabulate(mydata,tablefmt="grid"))
 
