@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.6.9 on linux)" generated="20220521 19:35:02.838" rpa="false" schemaversion="3">
+<suite id="s1" name="Contacts Testcases" source="/home/idm/Desktop/HDK855/tests/contacts_testcases.robot">
+<kw name="Initialize Metadata" type="SETUP">
+<kw name="GET DEVICE NAME" library="base_lib">
+<var>${devicename}</var>
+<msg timestamp="20220521 19:35:03.144" level="INFO">coral</msg>
+<msg timestamp="20220521 19:35:03.145" level="INFO">${devicename} = coral
+</msg>
+<status status="PASS" starttime="20220521 19:35:03.118" endtime="20220521 19:35:03.145"/>
+</kw>
+<kw name="Set Suite Metadata" library="BuiltIn">
+<arg>Device Name</arg>
+<arg>${devicename}</arg>
+<doc>Sets metadata for the current test suite.</doc>
+<msg timestamp="20220521 19:35:03.146" level="INFO">Set suite metadata 'Device Name' to value 'coral
+'.</msg>
+<status status="PASS" starttime="20220521 19:35:03.145" endtime="20220521 19:35:03.146"/>
+</kw>
+<kw name="GET DEVICE MODEL" library="base_lib">
+<var>${devicemodel}</var>
+<msg timestamp="20220521 19:35:03.168" level="INFO">${devicemodel} = Pixel 4 XL
+</msg>
+<status status="PASS" starttime="20220521 19:35:03.146" endtime="20220521 19:35:03.169"/>
+</kw>
+<kw name="Set Suite Metadata" library="BuiltIn">
+<arg>Device Model</arg>
+<arg>${devicemodel}</arg>
+<doc>Sets metadata for the current test suite.</doc>
+<msg timestamp="20220521 19:35:03.170" level="INFO">Set suite metadata 'Device Model' to value 'Pixel 4 XL
+'.</msg>
+<status status="PASS" starttime="20220521 19:35:03.169" endtime="20220521 19:35:03.170"/>
+</kw>
+<kw name="GET ANDROID VERSION" library="base_lib">
+<var>${Android_ver}</var>
+<msg timestamp="20220521 19:35:03.194" level="INFO">${Android_ver} = 10
+</msg>
+<status status="PASS" starttime="20220521 19:35:03.170" endtime="20220521 19:35:03.194"/>
+</kw>
+<kw name="Set Suite Metadata" library="BuiltIn">
+<arg>OS Version</arg>
+<arg>${Android_ver}</arg>
+<doc>Sets metadata for the current test suite.</doc>
+<msg timestamp="20220521 19:35:03.196" level="INFO">Set suite metadata 'OS Version' to value '10
+'.</msg>
+<status status="PASS" starttime="20220521 19:35:03.195" endtime="20220521 19:35:03.196"/>
+</kw>
+<kw name="GET BUILD ID" library="base_lib">
+<var>${build_id}</var>
+<msg timestamp="20220521 19:35:03.220" level="INFO">${build_id} = QD1A.190821.007
+</msg>
+<status status="PASS" starttime="20220521 19:35:03.196" endtime="20220521 19:35:03.221"/>
+</kw>
+<kw name="Set Suite Metadata" library="BuiltIn">
+<arg>Build ID</arg>
+<arg>${build_id}</arg>
+<doc>Sets metadata for the current test suite.</doc>
+<msg timestamp="20220521 19:35:03.222" level="INFO">Set suite metadata 'Build ID' to value 'QD1A.190821.007
+'.</msg>
+<status status="PASS" starttime="20220521 19:35:03.221" endtime="20220521 19:35:03.222"/>
+</kw>
+<status status="PASS" starttime="20220521 19:35:03.117" endtime="20220521 19:35:03.223"/>
+</kw>
+<test id="s1-t1" name="Test_001 - CREATE NEW CONTACT" line="34">
+<kw name="START TEST" library="base_lib" type="SETUP">
+<status status="PASS" starttime="20220521 19:35:03.225" endtime="20220521 19:35:09.904"/>
+</kw>
+<kw name="LAUNCH_CONTACTS">
+<var>${result}</var>
+<msg timestamp="20220521 19:35:09.909" level="FAIL">No keyword with name 'LAUNCH_CONTACTS' found.</msg>
+<status status="FAIL" starttime="20220521 19:35:09.909" endtime="20220521 19:35:09.910"/>
+</kw>
+<kw name="ADD_CONTACT">
+<var>${result}</var>
+<arg>${contact1_name}</arg>
+<arg>${contact1_number}</arg>
+<status status="NOT RUN" starttime="20220521 19:35:09.914" endtime="20220521 19:35:09.914"/>
+</kw>
+<kw name="ADD_CONTACT">
+<var>${result}</var>
+<arg>${contact2_name}</arg>
+<arg>${contact2_number}</arg>
+<status status="NOT RUN" starttime="20220521 19:35:09.917" endtime="20220521 19:35:09.917"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${result}==False</arg>
+<arg>Fail</arg>
+<arg>ADD_CONTACT_FAILED</arg>
+<arg>ELSE</arg>
+<arg>LOG</arg>
+<arg>PASS</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" starttime="20220521 19:35:09.917" endtime="20220521 19:35:09.918"/>
+</kw>
+<kw name="END TEST" library="base_lib" type="TEARDOWN">
+<msg timestamp="20220521 19:35:15.210" level="INFO">coral
+
+coral</msg>
+<status status="PASS" starttime="20220521 19:35:09.919" endtime="20220521 19:35:15.211"/>
+</kw>
+<tag>Sanity</tag>
+<status status="FAIL" starttime="20220521 19:35:03.224" endtime="20220521 19:35:15.212">No keyword with name 'LAUNCH_CONTACTS' found.</status>
+</test>
+<test id="s1-t2" name="Test_002 - SEARCH CONTACT" line="42">
+<kw name="START TEST" library="base_lib" type="SETUP">
+<status status="PASS" starttime="20220521 19:35:15.214" endtime="20220521 19:35:21.232"/>
+</kw>
+<kw name="LAUNCH_CONTACTS">
+<var>${result}</var>
+<msg timestamp="20220521 19:35:21.235" level="FAIL">No keyword with name 'LAUNCH_CONTACTS' found.</msg>
+<status status="FAIL" starttime="20220521 19:35:21.235" endtime="20220521 19:35:21.236"/>
+</kw>
+<kw name="SEARCH_CONTACT_BY_NAME">
+<var>${result}</var>
+<arg>${contact1_name}</arg>
+<status status="NOT RUN" starttime="20220521 19:35:21.238" endtime="20220521 19:35:21.238"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${result}==False</arg>
+<arg>Fail</arg>
+<arg>SEARCH_CONTACT_FAILED</arg>
+<arg>ELSE</arg>
+<arg>LOG</arg>
+<arg>PASS</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" starttime="20220521 19:35:21.238" endtime="20220521 19:35:21.238"/>
+</kw>
+<kw name="END TEST" library="base_lib" type="TEARDOWN">
+<msg timestamp="20220521 19:35:26.479" level="INFO">coral
+
+coral</msg>
+<status status="PASS" starttime="20220521 19:35:21.238" endtime="20220521 19:35:26.479"/>
+</kw>
+<tag>Sanity</tag>
+<status status="FAIL" starttime="20220521 19:35:15.213" endtime="20220521 19:35:26.480">No keyword with name 'LAUNCH_CONTACTS' found.</status>
+</test>
+<test id="s1-t3" name="Test_003 - EDIT CONTACT NAME" line="49">
+<kw name="START TEST" library="base_lib" type="SETUP">
+<status status="PASS" starttime="20220521 19:35:26.482" endtime="20220521 19:35:32.502"/>
+</kw>
+<kw name="LAUNCH_CONTACTS">
+<var>${result}</var>
+<msg timestamp="20220521 19:35:32.506" level="FAIL">No keyword with name 'LAUNCH_CONTACTS' found.</msg>
+<status status="FAIL" starttime="20220521 19:35:32.506" endtime="20220521 19:35:32.506"/>
+</kw>
+<kw name="EDIT_CONTACT_NAME">
+<var>${result}</var>
+<arg>${contact2_name}</arg>
+<arg>${changed_name}</arg>
+<status status="NOT RUN" starttime="20220521 19:35:32.508" endtime="20220521 19:35:32.508"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${result}==False</arg>
+<arg>Fail</arg>
+<arg>EDIT_CONTACT_FAILED</arg>
+<arg>ELSE</arg>
+<arg>LOG</arg>
+<arg>PASS</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" starttime="20220521 19:35:32.508" endtime="20220521 19:35:32.508"/>
+</kw>
+<kw name="END TEST" library="base_lib" type="TEARDOWN">
+<status status="FAIL" starttime="20220521 19:35:32.509" endtime="20220521 19:35:34.775">Execution terminated by signal</status>
+</kw>
+<tag>Sanity</tag>
+<status status="FAIL" starttime="20220521 19:35:26.481" endtime="20220521 19:35:34.775">No keyword with name 'LAUNCH_CONTACTS' found.
+
+Also teardown failed:
+Execution terminated by signal</status>
+</test>
+<test id="s1-t4" name="Test_004 - EDIT CONTACT NUMBER" line="55">
+<tag>robot:exit</tag>
+<tag>Sanity</tag>
+<status status="FAIL" starttime="20220521 19:35:34.776" endtime="20220521 19:35:34.777">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t5" name="Test_005 - EXPORT CONTACT" line="62">
+<tag>robot:exit</tag>
+<tag>Sanity</tag>
+<status status="FAIL" starttime="20220521 19:35:34.778" endtime="20220521 19:35:34.779">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t6" name="Test_006 - IMPORT CONTACTS" line="69">
+<tag>robot:exit</tag>
+<tag>Sanity</tag>
+<status status="FAIL" starttime="20220521 19:35:34.779" endtime="20220521 19:35:34.780">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t7" name="Test_007 - SEND TEXT MESSAGE" line="76">
+<tag>robot:exit</tag>
+<tag>Sanity</tag>
+<status status="FAIL" starttime="20220521 19:35:34.781" endtime="20220521 19:35:34.782">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t8" name="Test_008 - DELETE CONTACT" line="82">
+<tag>robot:exit</tag>
+<tag>Sanity</tag>
+<status status="FAIL" starttime="20220521 19:35:34.782" endtime="20220521 19:35:34.782">Test execution stopped due to a fatal error.</status>
+</test>
+<doc>Sanity test</doc>
+<meta name="Build ID">QD1A.190821.007
+</meta>
+<meta name="Device Model">Pixel 4 XL
+</meta>
+<meta name="Device Name">coral
+</meta>
+<meta name="OS Version">10
+</meta>
+<status status="FAIL" starttime="20220521 19:35:02.839" endtime="20220521 19:35:34.783"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="8" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="3" skip="0" info="combined" combined="NOT robot:exit">NOT robot:exit</stat>
+<stat pass="0" fail="8" skip="0">Sanity</stat>
+</tag>
+<suite>
+<stat pass="0" fail="8" skip="0" id="s1" name="Contacts Testcases">Contacts Testcases</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220521 19:35:03.115" level="ERROR">Error in file '/home/idm/Desktop/HDK855/tests/contacts_testcases.robot' on line 6: Importing library '/home/idm/Desktop/HDK855/library/contacts_lib.py' failed: IndentationError: unindent does not match any outer indentation level (contacts_lib.py, line 139)
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  /home/idm/Desktop/HDK855/library
+  /usr/local/bin
+  /usr/lib/python36.zip
+  /usr/lib/python3.6
+  /usr/lib/python3.6/lib-dynload
+  /home/idm/.local/lib/python3.6/site-packages
+  /usr/local/lib/python3.6/dist-packages
+  /usr/lib/python3/dist-packages</msg>
+</errors>
+</robot>

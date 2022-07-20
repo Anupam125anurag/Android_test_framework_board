@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.6.9 on linux)" generated="20220520 20:58:32.224" rpa="false" schemaversion="3">
+<suite id="s1" name="Contacts Testcases" source="/home/idm/Desktop/HDK855/tests/contacts_testcases.robot">
+<kw name="Initialize Metadata" type="SETUP">
+<kw name="GET DEVICE NAME" library="base_lib">
+<var>${devicename}</var>
+<msg timestamp="20220520 20:58:32.282" level="INFO">coral</msg>
+<msg timestamp="20220520 20:58:32.282" level="INFO">${devicename} = coral
+</msg>
+<status status="PASS" starttime="20220520 20:58:32.261" endtime="20220520 20:58:32.282"/>
+</kw>
+<kw name="Set Suite Metadata" library="BuiltIn">
+<arg>Device Name</arg>
+<arg>${devicename}</arg>
+<doc>Sets metadata for the current test suite.</doc>
+<msg timestamp="20220520 20:58:32.284" level="INFO">Set suite metadata 'Device Name' to value 'coral
+'.</msg>
+<status status="PASS" starttime="20220520 20:58:32.283" endtime="20220520 20:58:32.284"/>
+</kw>
+<kw name="GET DEVICE MODEL" library="base_lib">
+<var>${devicemodel}</var>
+<msg timestamp="20220520 20:58:32.301" level="INFO">${devicemodel} = Pixel 4 XL
+</msg>
+<status status="PASS" starttime="20220520 20:58:32.284" endtime="20220520 20:58:32.301"/>
+</kw>
+<kw name="Set Suite Metadata" library="BuiltIn">
+<arg>Device Model</arg>
+<arg>${devicemodel}</arg>
+<doc>Sets metadata for the current test suite.</doc>
+<msg timestamp="20220520 20:58:32.304" level="INFO">Set suite metadata 'Device Model' to value 'Pixel 4 XL
+'.</msg>
+<status status="PASS" starttime="20220520 20:58:32.302" endtime="20220520 20:58:32.304"/>
+</kw>
+<kw name="GET ANDROID VERSION" library="base_lib">
+<var>${Android_ver}</var>
+<msg timestamp="20220520 20:58:32.327" level="INFO">${Android_ver} = 10
+</msg>
+<status status="PASS" starttime="20220520 20:58:32.304" endtime="20220520 20:58:32.328"/>
+</kw>
+<kw name="Set Suite Metadata" library="BuiltIn">
+<arg>OS Version</arg>
+<arg>${Android_ver}</arg>
+<doc>Sets metadata for the current test suite.</doc>
+<msg timestamp="20220520 20:58:32.331" level="INFO">Set suite metadata 'OS Version' to value '10
+'.</msg>
+<status status="PASS" starttime="20220520 20:58:32.328" endtime="20220520 20:58:32.331"/>
+</kw>
+<kw name="GET BUILD ID" library="base_lib">
+<var>${build_id}</var>
+<msg timestamp="20220520 20:58:32.352" level="INFO">${build_id} = QD1A.190821.007
+</msg>
+<status status="PASS" starttime="20220520 20:58:32.331" endtime="20220520 20:58:32.352"/>
+</kw>
+<kw name="Set Suite Metadata" library="BuiltIn">
+<arg>Build ID</arg>
+<arg>${build_id}</arg>
+<doc>Sets metadata for the current test suite.</doc>
+<msg timestamp="20220520 20:58:32.354" level="INFO">Set suite metadata 'Build ID' to value 'QD1A.190821.007
+'.</msg>
+<status status="PASS" starttime="20220520 20:58:32.353" endtime="20220520 20:58:32.354"/>
+</kw>
+<status status="PASS" starttime="20220520 20:58:32.261" endtime="20220520 20:58:32.354"/>
+</kw>
+<test id="s1-t1" name="Test_001 - CREATE NEW CONTACT" line="34">
+<kw name="START TEST" library="base_lib" type="SETUP">
+<status status="PASS" starttime="20220520 20:58:32.356" endtime="20220520 20:58:38.392"/>
+</kw>
+<kw name="LAUNCH CONTACTS" library="contacts_lib">
+<var>${result}</var>
+<msg timestamp="20220520 20:59:14.504" level="INFO">Launching Contacts
+coral
+
+coral
+
+Exception Occured: JsonRPC Error code: -32002, Message: androidx.test.uiautomator.UiObjectNotFoundException: UiSelector[CLASS=android.widget.FrameLayout, RESOURCE_ID=com.google.android.apps.nexuslauncher:id/search_container_all_apps]</msg>
+<msg timestamp="20220520 20:59:14.504" level="INFO">${result} = True</msg>
+<status status="PASS" starttime="20220520 20:58:38.392" endtime="20220520 20:59:14.504"/>
+</kw>
+<kw name="ADD CONTACT" library="contacts_lib">
+<var>${result}</var>
+<arg>${contact1_name}</arg>
+<arg>${contact1_number}</arg>
+<msg timestamp="20220520 20:59:37.302" level="INFO">Adding new Contact
+Exception occured JsonRPC Error code: -32002, Message: androidx.test.uiautomator.UiObjectNotFoundException: UiSelector[CLASS=android.widget.ImageButton, RESOURCE_ID=com.android.contacts:id/floating_action_button]</msg>
+<msg timestamp="20220520 20:59:37.303" level="INFO">${result} = False</msg>
+<status status="PASS" starttime="20220520 20:59:14.505" endtime="20220520 20:59:37.303"/>
+</kw>
+<kw name="ADD CONTACT" library="contacts_lib">
+<var>${result}</var>
+<arg>${contact2_name}</arg>
+<arg>${contact2_number}</arg>
+<msg timestamp="20220520 21:00:00.077" level="INFO">Adding new Contact
+Exception occured JsonRPC Error code: -32002, Message: androidx.test.uiautomator.UiObjectNotFoundException: UiSelector[CLASS=android.widget.ImageButton, RESOURCE_ID=com.android.contacts:id/floating_action_button]</msg>
+<msg timestamp="20220520 21:00:00.078" level="INFO">${result} = False</msg>
+<status status="PASS" starttime="20220520 20:59:37.304" endtime="20220520 21:00:00.078"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${result}==False</arg>
+<arg>Fail</arg>
+<arg>ADD_CONTACT_FAILED</arg>
+<arg>ELSE</arg>
+<arg>LOG</arg>
+<arg>PASS</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Fail" library="BuiltIn">
+<arg>ADD_CONTACT_FAILED</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<msg timestamp="20220520 21:00:00.081" level="FAIL">ADD_CONTACT_FAILED</msg>
+<status status="FAIL" starttime="20220520 21:00:00.079" endtime="20220520 21:00:00.081"/>
+</kw>
+<status status="FAIL" starttime="20220520 21:00:00.078" endtime="20220520 21:00:00.081"/>
+</kw>
+<kw name="END TEST" library="base_lib" type="TEARDOWN">
+<msg timestamp="20220520 21:00:11.372" level="INFO">coral
+
+coral</msg>
+<status status="PASS" starttime="20220520 21:00:00.083" endtime="20220520 21:00:11.372"/>
+</kw>
+<tag>Sanity</tag>
+<status status="FAIL" starttime="20220520 20:58:32.355" endtime="20220520 21:00:11.373">ADD_CONTACT_FAILED</status>
+</test>
+<test id="s1-t2" name="Test_002 - SEARCH CONTACT" line="42">
+<kw name="START TEST" library="base_lib" type="SETUP">
+<status status="PASS" starttime="20220520 21:00:11.375" endtime="20220520 21:00:17.392"/>
+</kw>
+<kw name="LAUNCH CONTACTS" library="contacts_lib">
+<var>${result}</var>
+<msg timestamp="20220520 21:00:27.736" level="INFO">Launching Contacts</msg>
+<msg timestamp="20220520 21:00:27.736" level="INFO">${result} = True</msg>
+<status status="PASS" starttime="20220520 21:00:17.392" endtime="20220520 21:00:27.736"/>
+</kw>
+<kw name="SEARCH CONTACT BY NAME" library="contacts_lib">
+<var>${result}</var>
+<arg>${contact1_name}</arg>
+<msg timestamp="20220520 21:00:50.682" level="INFO">Exception occured JsonRPC Error code: -32002, Message: androidx.test.uiautomator.UiObjectNotFoundException: UiSelector[CLASS=android.widget.TextView, RESOURCE_ID=com.android.contacts:id/menu_search]</msg>
+<msg timestamp="20220520 21:00:50.683" level="INFO">${result} = False</msg>
+<status status="PASS" starttime="20220520 21:00:27.737" endtime="20220520 21:00:50.683"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${result}==False</arg>
+<arg>Fail</arg>
+<arg>SEARCH_CONTACT_FAILED</arg>
+<arg>ELSE</arg>
+<arg>LOG</arg>
+<arg>PASS</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Fail" library="BuiltIn">
+<arg>SEARCH_CONTACT_FAILED</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<msg timestamp="20220520 21:00:50.685" level="FAIL">SEARCH_CONTACT_FAILED</msg>
+<status status="FAIL" starttime="20220520 21:00:50.684" endtime="20220520 21:00:50.685"/>
+</kw>
+<status status="FAIL" starttime="20220520 21:00:50.683" endtime="20220520 21:00:50.685"/>
+</kw>
+<kw name="END TEST" library="base_lib" type="TEARDOWN">
+<msg timestamp="20220520 21:01:01.918" level="INFO">coral
+
+coral</msg>
+<status status="PASS" starttime="20220520 21:00:50.686" endtime="20220520 21:01:01.918"/>
+</kw>
+<tag>Sanity</tag>
+<status status="FAIL" starttime="20220520 21:00:11.374" endtime="20220520 21:01:01.919">SEARCH_CONTACT_FAILED</status>
+</test>
+<test id="s1-t3" name="Test_003 - EDIT CONTACT NAME" line="49">
+<kw name="START TEST" library="base_lib" type="SETUP">
+<status status="PASS" starttime="20220520 21:01:01.921" endtime="20220520 21:01:07.936"/>
+</kw>
+<kw name="LAUNCH CONTACTS" library="contacts_lib">
+<var>${result}</var>
+<msg timestamp="20220520 21:01:18.252" level="INFO">Launching Contacts</msg>
+<msg timestamp="20220520 21:01:18.252" level="INFO">${result} = True</msg>
+<status status="PASS" starttime="20220520 21:01:07.936" endtime="20220520 21:01:18.252"/>
+</kw>
+<kw name="EDIT CONTACT NAME" library="contacts_lib">
+<var>${result}</var>
+<arg>${contact2_name}</arg>
+<arg>${changed_name}</arg>
+<msg timestamp="20220520 21:02:04.071" level="INFO">Exception occured JsonRPC Error code: -32002, Message: androidx.test.uiautomator.UiObjectNotFoundException: UiSelector[CLASS=android.widget.TextView, RESOURCE_ID=com.android.contacts:id/menu_search]
+Exception occured JsonRPC Error code: -32002, Message: androidx.test.uiautomator.UiObjectNotFoundException: UiSelector[TEXT=abc, CLASS=android.widget.TextView]</msg>
+<msg timestamp="20220520 21:02:04.071" level="INFO">${result} = False</msg>
+<status status="PASS" starttime="20220520 21:01:18.252" endtime="20220520 21:02:04.071"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${result}==False</arg>
+<arg>Fail</arg>
+<arg>EDIT_CONTACT_FAILED</arg>
+<arg>ELSE</arg>
+<arg>LOG</arg>
+<arg>PASS</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Fail" library="BuiltIn">
+<arg>EDIT_CONTACT_FAILED</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<msg timestamp="20220520 21:02:04.073" level="FAIL">EDIT_CONTACT_FAILED</msg>
+<status status="FAIL" starttime="20220520 21:02:04.073" endtime="20220520 21:02:04.074"/>
+</kw>
+<status status="FAIL" starttime="20220520 21:02:04.072" endtime="20220520 21:02:04.074"/>
+</kw>
+<kw name="END TEST" library="base_lib" type="TEARDOWN">
+<msg timestamp="20220520 21:02:15.388" level="INFO">coral
+
+coral</msg>
+<status status="PASS" starttime="20220520 21:02:04.075" endtime="20220520 21:02:15.389"/>
+</kw>
+<tag>Sanity</tag>
+<status status="FAIL" starttime="20220520 21:01:01.920" endtime="20220520 21:02:15.390">EDIT_CONTACT_FAILED</status>
+</test>
+<test id="s1-t4" name="Test_004 - EDIT CONTACT NUMBER" line="55">
+<kw name="START TEST" library="base_lib" type="SETUP">
+<status status="PASS" starttime="20220520 21:02:15.392" endtime="20220520 21:02:21.408"/>
+</kw>
+<kw name="LAUNCH CONTACTS" library="contacts_lib">
+<var>${result}</var>
+<msg timestamp="20220520 21:02:31.768" level="INFO">Launching Contacts</msg>
+<msg timestamp="20220520 21:02:31.768" level="INFO">${result} = True</msg>
+<status status="PASS" starttime="20220520 21:02:21.408" endtime="20220520 21:02:31.768"/>
+</kw>
+<kw name="EDIT CONTACT NUMBER" library="contacts_lib">
+<var>${result}</var>
+<arg>${contact1_name}</arg>
+<arg>${changed_number}</arg>
+<msg timestamp="20220520 21:03:17.672" level="INFO">Exception occured JsonRPC Error code: -32002, Message: androidx.test.uiautomator.UiObjectNotFoundException: UiSelector[CLASS=android.widget.TextView, RESOURCE_ID=com.android.contacts:id/menu_search]
+Exception occured JsonRPC Error code: -32002, Message: androidx.test.uiautomator.UiObjectNotFoundException: UiSelector[TEXT=xyz, CLASS=android.widget.TextView]</msg>
+<msg timestamp="20220520 21:03:17.673" level="INFO">${result} = False</msg>
+<status status="PASS" starttime="20220520 21:02:31.768" endtime="20220520 21:03:17.673"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${result}==False</arg>
+<arg>Fail</arg>
+<arg>EDIT_CONTACT_FAILED</arg>
+<arg>ELSE</arg>
+<arg>LOG</arg>
+<arg>PASS</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Fail" library="BuiltIn">
+<arg>EDIT_CONTACT_FAILED</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<msg timestamp="20220520 21:03:17.675" level="FAIL">EDIT_CONTACT_FAILED</msg>
+<status status="FAIL" starttime="20220520 21:03:17.674" endtime="20220520 21:03:17.675"/>
+</kw>
+<status status="FAIL" starttime="20220520 21:03:17.673" endtime="20220520 21:03:17.676"/>
+</kw>
+<kw name="END TEST" library="base_lib" type="TEARDOWN">
+<msg timestamp="20220520 21:03:28.911" level="INFO">coral
+
+coral</msg>
+<status status="PASS" starttime="20220520 21:03:17.677" endtime="20220520 21:03:28.912"/>
+</kw>
+<tag>Sanity</tag>
+<status status="FAIL" starttime="20220520 21:02:15.391" endtime="20220520 21:03:28.913">EDIT_CONTACT_FAILED</status>
+</test>
+<test id="s1-t5" name="Test_005 - EXPORT CONTACT" line="62">
+<kw name="START TEST" library="base_lib" type="SETUP">
+<status status="PASS" starttime="20220520 21:03:28.915" endtime="20220520 21:03:34.932"/>
+</kw>
+<kw name="LAUNCH CONTACTS" library="contacts_lib">
+<var>${result}</var>
+<msg timestamp="20220520 21:03:45.223" level="INFO">Launching Contacts</msg>
+<msg timestamp="20220520 21:03:45.224" level="INFO">${result} = True</msg>
+<status status="PASS" starttime="20220520 21:03:34.932" endtime="20220520 21:03:45.224"/>
+</kw>
+<kw name="EXPORT CONTACTS" library="contacts_lib">
+<var>${result}</var>
+<msg timestamp="20220520 21:04:12.318" level="INFO">Exception occured JsonRPC Error code: -32002, Message: androidx.test.uiautomator.UiObjectNotFoundException: UiSelector[CLASS=android.widget.LinearLayout, RESOURCE_ID=com.android.contacts:id/nav_settings]</msg>
+<msg timestamp="20220520 21:04:12.318" level="INFO">${result} = False</msg>
+<status status="PASS" starttime="20220520 21:03:45.224" endtime="20220520 21:04:12.319"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${result}==False</arg>
+<arg>Fail</arg>
+<arg>EXPORT_CONTACT_FAILED</arg>
+<arg>ELSE</arg>
+<arg>LOG</arg>
+<arg>PASS</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Fail" library="BuiltIn">
+<arg>EXPORT_CONTACT_FAILED</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<msg timestamp="20220520 21:04:12.321" level="FAIL">EXPORT_CONTACT_FAILED</msg>
+<status status="FAIL" starttime="20220520 21:04:12.320" endtime="20220520 21:04:12.321"/>
+</kw>
+<status status="FAIL" starttime="20220520 21:04:12.319" endtime="20220520 21:04:12.321"/>
+</kw>
+<kw name="END TEST" library="base_lib" type="TEARDOWN">
+<msg timestamp="20220520 21:04:23.559" level="INFO">coral
+
+coral</msg>
+<status status="PASS" starttime="20220520 21:04:12.322" endtime="20220520 21:04:23.559"/>
+</kw>
+<tag>Sanity</tag>
+<status status="FAIL" starttime="20220520 21:03:28.914" endtime="20220520 21:04:23.560">EXPORT_CONTACT_FAILED</status>
+</test>
+<test id="s1-t6" name="Test_006 - IMPORT CONTACTS" line="69">
+<kw name="START TEST" library="base_lib" type="SETUP">
+<status status="PASS" starttime="20220520 21:04:23.562" endtime="20220520 21:04:29.579"/>
+</kw>
+<kw name="LAUNCH CONTACTS" library="contacts_lib">
+<var>${result}</var>
+<msg timestamp="20220520 21:04:39.936" level="INFO">Launching Contacts</msg>
+<msg timestamp="20220520 21:04:39.936" level="INFO">${result} = True</msg>
+<status status="PASS" starttime="20220520 21:04:29.579" endtime="20220520 21:04:39.936"/>
+</kw>
+<kw name="IMPORT CONTACTS" library="contacts_lib">
+<var>${result}</var>
+<msg timestamp="20220520 21:05:07.076" level="INFO">Exception occured JsonRPC Error code: -32002, Message: androidx.test.uiautomator.UiObjectNotFoundException: UiSelector[CLASS=android.widget.LinearLayout, RESOURCE_ID=com.android.contacts:id/nav_settings]</msg>
+<msg timestamp="20220520 21:05:07.077" level="INFO">${result} = False</msg>
+<status status="PASS" starttime="20220520 21:04:39.936" endtime="20220520 21:05:07.077"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${result}==False</arg>
+<arg>Fail</arg>
+<arg>IMPORT_CONTACT_FAILED</arg>
+<arg>ELSE</arg>
+<arg>LOG</arg>
+<arg>PASS</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Fail" library="BuiltIn">
+<arg>IMPORT_CONTACT_FAILED</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<msg timestamp="20220520 21:05:07.079" level="FAIL">IMPORT_CONTACT_FAILED</msg>
+<status status="FAIL" starttime="20220520 21:05:07.078" endtime="20220520 21:05:07.079"/>
+</kw>
+<status status="FAIL" starttime="20220520 21:05:07.077" endtime="20220520 21:05:07.080"/>
+</kw>
+<kw name="END TEST" library="base_lib" type="TEARDOWN">
+<msg timestamp="20220520 21:05:18.447" level="INFO">coral
+
+coral</msg>
+<status status="PASS" starttime="20220520 21:05:07.081" endtime="20220520 21:05:18.448"/>
+</kw>
+<tag>Sanity</tag>
+<status status="FAIL" starttime="20220520 21:04:23.561" endtime="20220520 21:05:18.448">IMPORT_CONTACT_FAILED</status>
+</test>
+<test id="s1-t7" name="Test_007 - SEND TEXT MESSAGE" line="76">
+<kw name="START TEST" library="base_lib" type="SETUP">
+<status status="PASS" starttime="20220520 21:05:18.450" endtime="20220520 21:05:24.468"/>
+</kw>
+<kw name="LAUNCH CONTACTS" library="contacts_lib">
+<var>${result}</var>
+<msg timestamp="20220520 21:05:34.768" level="INFO">Launching Contacts</msg>
+<msg timestamp="20220520 21:05:34.768" level="INFO">${result} = True</msg>
+<status status="PASS" starttime="20220520 21:05:24.468" endtime="20220520 21:05:34.768"/>
+</kw>
+<kw name="SEND MESSAGE" library="contacts_lib">
+<var>${result}</var>
+<arg>${contact1_name}</arg>
+<arg>${message}</arg>
+<msg timestamp="20220520 21:06:20.659" level="INFO">Exception occured JsonRPC Error code: -32002, Message: androidx.test.uiautomator.UiObjectNotFoundException: UiSelector[CLASS=android.widget.TextView, RESOURCE_ID=com.android.contacts:id/menu_search]
+Exception occured JsonRPC Error code: -32002, Message: androidx.test.uiautomator.UiObjectNotFoundException: UiSelector[TEXT=xyz, CLASS=android.widget.TextView]</msg>
+<msg timestamp="20220520 21:06:20.659" level="INFO">${result} = False</msg>
+<status status="PASS" starttime="20220520 21:05:34.769" endtime="20220520 21:06:20.659"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${result}==False</arg>
+<arg>Fail</arg>
+<arg>MESSAGE_CONTACT_FAILED</arg>
+<arg>ELSE</arg>
+<arg>LOG</arg>
+<arg>PASS</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Fail" library="BuiltIn">
+<arg>MESSAGE_CONTACT_FAILED</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<msg timestamp="20220520 21:06:20.662" level="FAIL">MESSAGE_CONTACT_FAILED</msg>
+<status status="FAIL" starttime="20220520 21:06:20.660" endtime="20220520 21:06:20.662"/>
+</kw>
+<status status="FAIL" starttime="20220520 21:06:20.659" endtime="20220520 21:06:20.662"/>
+</kw>
+<kw name="END TEST" library="base_lib" type="TEARDOWN">
+<msg timestamp="20220520 21:06:31.971" level="INFO">coral
+
+coral</msg>
+<status status="PASS" starttime="20220520 21:06:20.663" endtime="20220520 21:06:31.972"/>
+</kw>
+<tag>Sanity</tag>
+<status status="FAIL" starttime="20220520 21:05:18.449" endtime="20220520 21:06:31.972">MESSAGE_CONTACT_FAILED</status>
+</test>
+<test id="s1-t8" name="Test_008 - DELETE CONTACT" line="82">
+<kw name="START TEST" library="base_lib" type="SETUP">
+<status status="PASS" starttime="20220520 21:06:31.974" endtime="20220520 21:06:37.988"/>
+</kw>
+<kw name="LAUNCH CONTACTS" library="contacts_lib">
+<var>${result}</var>
+<msg timestamp="20220520 21:06:48.241" level="INFO">Launching Contacts</msg>
+<msg timestamp="20220520 21:06:48.241" level="INFO">${result} = True</msg>
+<status status="PASS" starttime="20220520 21:06:37.988" endtime="20220520 21:06:48.241"/>
+</kw>
+<kw name="DELETE CONTACT" library="contacts_lib">
+<var>${result}</var>
+<arg>${contact1_name}</arg>
+<msg timestamp="20220520 21:07:35.180" level="INFO">Exception occured JsonRPC Error code: -32002, Message: androidx.test.uiautomator.UiObjectNotFoundException: UiSelector[CLASS=android.widget.TextView, RESOURCE_ID=com.android.contacts:id/menu_search]
+Exception occured JsonRPC Error code: -32002, Message: androidx.test.uiautomator.UiObjectNotFoundException: UiSelector[TEXT=xyz, CLASS=android.widget.TextView]</msg>
+<msg timestamp="20220520 21:07:35.180" level="INFO">${result} = False</msg>
+<status status="PASS" starttime="20220520 21:06:48.242" endtime="20220520 21:07:35.180"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${result}==False</arg>
+<arg>Fail</arg>
+<arg>DELETE_CONTACT_FAILED</arg>
+<arg>ELSE</arg>
+<arg>LOG</arg>
+<arg>PASS</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Fail" library="BuiltIn">
+<arg>DELETE_CONTACT_FAILED</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<msg timestamp="20220520 21:07:35.182" level="FAIL">DELETE_CONTACT_FAILED</msg>
+<status status="FAIL" starttime="20220520 21:07:35.182" endtime="20220520 21:07:35.183"/>
+</kw>
+<status status="FAIL" starttime="20220520 21:07:35.181" endtime="20220520 21:07:35.183"/>
+</kw>
+<kw name="END TEST" library="base_lib" type="TEARDOWN">
+<msg timestamp="20220520 21:07:46.539" level="INFO">coral
+
+coral</msg>
+<status status="PASS" starttime="20220520 21:07:35.184" endtime="20220520 21:07:46.540"/>
+</kw>
+<tag>Sanity</tag>
+<status status="FAIL" starttime="20220520 21:06:31.973" endtime="20220520 21:07:46.540">DELETE_CONTACT_FAILED</status>
+</test>
+<doc>Sanity test</doc>
+<meta name="Build ID">QD1A.190821.007
+</meta>
+<meta name="Device Model">Pixel 4 XL
+</meta>
+<meta name="Device Name">coral
+</meta>
+<meta name="OS Version">10
+</meta>
+<status status="FAIL" starttime="20220520 20:58:32.225" endtime="20220520 21:07:46.542"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="8" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="8" skip="0">Sanity</stat>
+</tag>
+<suite>
+<stat pass="0" fail="8" skip="0" id="s1" name="Contacts Testcases">Contacts Testcases</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,0 +1,53 @@
+Applications Memory Usage (in Kilobytes):
+Uptime: 15041322 Realtime: 15073659
+
+** MEMINFO in pid 10627 [com.google.android.GoogleCamera] **
+                   Pss  Private  Private  SwapPss      Rss     Heap     Heap     Heap
+                 Total    Dirty    Clean    Dirty    Total     Size    Alloc     Free
+                ------   ------   ------   ------   ------   ------   ------   ------
+  Native Heap     2524     2508        0       20     4252    11348     4632     1560
+  Dalvik Heap     1792     1740        0       80     5032    11067     2891     8176
+ Dalvik Other     1736     1700        0        2     3056                           
+        Stack      596      596        0        0      612                           
+       Ashmem        8        0        0        0      548                           
+    Other dev       17        0       16        0      212                           
+     .so mmap      532      164        0        8    18500                           
+    .jar mmap      524        0       20        0    22032                           
+    .apk mmap     6673       28     5700        0     9528                           
+    .dex mmap      201        8       16        0      772                           
+    .oat mmap      178        0        0        0    10724                           
+    .art mmap      682      452        8       87    14180                           
+   Other mmap       47       40        0        0      588                           
+      Unknown      345      340        0        2      840                           
+        TOTAL    16054     7576     5760      199    90876    22415     7523     9736
+ 
+ App Summary
+                       Pss(KB)                        Rss(KB)
+                        ------                         ------
+           Java Heap:     2200                          19212
+         Native Heap:     2508                           4252
+                Code:     5940                          61644
+               Stack:      596                            612
+            Graphics:        0                              0
+       Private Other:     2092
+              System:     2718
+             Unknown:                                    5156
+ 
+           TOTAL PSS:    16054            TOTAL RSS:    90876       TOTAL SWAP PSS:      199
+ 
+ Objects
+               Views:        0         ViewRootImpl:        0
+         AppContexts:        5           Activities:        0
+              Assets:       25        AssetManagers:        0
+       Local Binders:       16        Proxy Binders:       26
+       Parcel memory:        5         Parcel count:       22
+    Death Recipients:        0      OpenSSL Sockets:        0
+            WebViews:        0
+ 
+ SQL
+         MEMORY_USED:       72
+  PAGECACHE_OVERFLOW:       12          MALLOC_SIZE:       46
+ 
+ DATABASES
+      pgsz     dbsz   Lookaside(b)          cache  Dbname
+         4       16             17         0/15/1  /data/user/0/com.google.android.GoogleCamera/databases/special_type_db_helper

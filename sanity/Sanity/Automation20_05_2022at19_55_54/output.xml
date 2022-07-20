@@ -1,0 +1,1258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.6.9 on linux)" generated="20220520 19:35:08.505" rpa="false" schemaversion="3">
+<suite id="s1" name="Tests" source="/home/idm/Desktop/HDK855/tests">
+<suite id="s1-s1" name="Contacts Testcases" source="/home/idm/Desktop/HDK855/tests/contacts_testcases.robot">
+<kw name="Initialize Metadata" type="SETUP">
+<kw name="GET DEVICE NAME" library="base_lib">
+<var>${devicename}</var>
+<msg timestamp="20220520 19:35:08.824" level="INFO">coral</msg>
+<msg timestamp="20220520 19:35:08.824" level="INFO">${devicename} = coral
+</msg>
+<status status="PASS" starttime="20220520 19:35:08.800" endtime="20220520 19:35:08.824"/>
+</kw>
+<kw name="Set Suite Metadata" library="BuiltIn">
+<arg>Device Name</arg>
+<arg>${devicename}</arg>
+<doc>Sets metadata for the current test suite.</doc>
+<msg timestamp="20220520 19:35:08.826" level="INFO">Set suite metadata 'Device Name' to value 'coral
+'.</msg>
+<status status="PASS" starttime="20220520 19:35:08.825" endtime="20220520 19:35:08.826"/>
+</kw>
+<kw name="GET DEVICE MODEL" library="base_lib">
+<var>${devicemodel}</var>
+<msg timestamp="20220520 19:35:08.851" level="INFO">${devicemodel} = Pixel 4 XL
+</msg>
+<status status="PASS" starttime="20220520 19:35:08.826" endtime="20220520 19:35:08.851"/>
+</kw>
+<kw name="Set Suite Metadata" library="BuiltIn">
+<arg>Device Model</arg>
+<arg>${devicemodel}</arg>
+<doc>Sets metadata for the current test suite.</doc>
+<msg timestamp="20220520 19:35:08.854" level="INFO">Set suite metadata 'Device Model' to value 'Pixel 4 XL
+'.</msg>
+<status status="PASS" starttime="20220520 19:35:08.852" endtime="20220520 19:35:08.854"/>
+</kw>
+<kw name="GET ANDROID VERSION" library="base_lib">
+<var>${Android_ver}</var>
+<msg timestamp="20220520 19:35:08.880" level="INFO">${Android_ver} = 10
+</msg>
+<status status="PASS" starttime="20220520 19:35:08.854" endtime="20220520 19:35:08.880"/>
+</kw>
+<kw name="Set Suite Metadata" library="BuiltIn">
+<arg>OS Version</arg>
+<arg>${Android_ver}</arg>
+<doc>Sets metadata for the current test suite.</doc>
+<msg timestamp="20220520 19:35:08.882" level="INFO">Set suite metadata 'OS Version' to value '10
+'.</msg>
+<status status="PASS" starttime="20220520 19:35:08.881" endtime="20220520 19:35:08.882"/>
+</kw>
+<kw name="GET BUILD ID" library="base_lib">
+<var>${build_id}</var>
+<msg timestamp="20220520 19:35:08.899" level="INFO">${build_id} = QD1A.190821.007
+</msg>
+<status status="PASS" starttime="20220520 19:35:08.882" endtime="20220520 19:35:08.899"/>
+</kw>
+<kw name="Set Suite Metadata" library="BuiltIn">
+<arg>Build ID</arg>
+<arg>${build_id}</arg>
+<doc>Sets metadata for the current test suite.</doc>
+<msg timestamp="20220520 19:35:08.900" level="INFO">Set suite metadata 'Build ID' to value 'QD1A.190821.007
+'.</msg>
+<status status="PASS" starttime="20220520 19:35:08.900" endtime="20220520 19:35:08.901"/>
+</kw>
+<status status="PASS" starttime="20220520 19:35:08.799" endtime="20220520 19:35:08.901"/>
+</kw>
+<test id="s1-s1-t1" name="Test_001 - CREATE NEW CONTACT" line="34">
+<kw name="START TEST" library="base_lib" type="SETUP">
+<status status="PASS" starttime="20220520 19:35:08.903" endtime="20220520 19:35:15.900"/>
+</kw>
+<kw name="LAUNCH CONTACTS" library="contacts_lib">
+<var>${result}</var>
+<msg timestamp="20220520 19:35:26.380" level="INFO">Launching Contacts</msg>
+<msg timestamp="20220520 19:35:26.380" level="INFO">${result} = True</msg>
+<status status="PASS" starttime="20220520 19:35:15.901" endtime="20220520 19:35:26.380"/>
+</kw>
+<kw name="ADD CONTACT" library="contacts_lib">
+<var>${result}</var>
+<arg>${contact1_name}</arg>
+<arg>${contact1_number}</arg>
+<msg timestamp="20220520 19:35:49.796" level="INFO">Adding new Contact
+Exception occured JsonRPC Error code: -32002, Message: androidx.test.uiautomator.UiObjectNotFoundException: UiSelector[CLASS=android.widget.ImageButton, RESOURCE_ID=com.android.contacts:id/floating_action_button]</msg>
+<msg timestamp="20220520 19:35:49.796" level="INFO">${result} = False</msg>
+<status status="PASS" starttime="20220520 19:35:26.380" endtime="20220520 19:35:49.796"/>
+</kw>
+<kw name="ADD CONTACT" library="contacts_lib">
+<var>${result}</var>
+<arg>${contact2_name}</arg>
+<arg>${contact2_number}</arg>
+<msg timestamp="20220520 19:36:13.151" level="INFO">Adding new Contact
+Exception occured JsonRPC Error code: -32002, Message: androidx.test.uiautomator.UiObjectNotFoundException: UiSelector[CLASS=android.widget.ImageButton, RESOURCE_ID=com.android.contacts:id/floating_action_button]</msg>
+<msg timestamp="20220520 19:36:13.152" level="INFO">${result} = False</msg>
+<status status="PASS" starttime="20220520 19:35:49.797" endtime="20220520 19:36:13.152"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${result}==False</arg>
+<arg>Fail</arg>
+<arg>ADD_CONTACT_FAILED</arg>
+<arg>ELSE</arg>
+<arg>LOG</arg>
+<arg>PASS</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Fail" library="BuiltIn">
+<arg>ADD_CONTACT_FAILED</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<msg timestamp="20220520 19:36:13.155" level="FAIL">ADD_CONTACT_FAILED</msg>
+<status status="FAIL" starttime="20220520 19:36:13.153" endtime="20220520 19:36:13.155"/>
+</kw>
+<status status="FAIL" starttime="20220520 19:36:13.152" endtime="20220520 19:36:13.155"/>
+</kw>
+<kw name="END TEST" library="base_lib" type="TEARDOWN">
+<msg timestamp="20220520 19:36:24.485" level="INFO">coral
+
+coral</msg>
+<status status="PASS" starttime="20220520 19:36:13.157" endtime="20220520 19:36:24.485"/>
+</kw>
+<tag>Sanity</tag>
+<status status="FAIL" starttime="20220520 19:35:08.902" endtime="20220520 19:36:24.486">ADD_CONTACT_FAILED</status>
+</test>
+<test id="s1-s1-t2" name="Test_002 - SEARCH CONTACT" line="42">
+<kw name="START TEST" library="base_lib" type="SETUP">
+<status status="PASS" starttime="20220520 19:36:24.488" endtime="20220520 19:36:30.504"/>
+</kw>
+<kw name="LAUNCH CONTACTS" library="contacts_lib">
+<var>${result}</var>
+<msg timestamp="20220520 19:36:40.818" level="INFO">Launching Contacts</msg>
+<msg timestamp="20220520 19:36:40.819" level="INFO">${result} = True</msg>
+<status status="PASS" starttime="20220520 19:36:30.504" endtime="20220520 19:36:40.819"/>
+</kw>
+<kw name="SEARCH CONTACT BY NAME" library="contacts_lib">
+<var>${result}</var>
+<arg>${contact1_name}</arg>
+<msg timestamp="20220520 19:37:03.978" level="INFO">Exception occured JsonRPC Error code: -32002, Message: androidx.test.uiautomator.UiObjectNotFoundException: UiSelector[CLASS=android.widget.TextView, RESOURCE_ID=com.android.contacts:id/menu_search]</msg>
+<msg timestamp="20220520 19:37:03.978" level="INFO">${result} = False</msg>
+<status status="PASS" starttime="20220520 19:36:40.819" endtime="20220520 19:37:03.978"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${result}==False</arg>
+<arg>Fail</arg>
+<arg>SEARCH_CONTACT_FAILED</arg>
+<arg>ELSE</arg>
+<arg>LOG</arg>
+<arg>PASS</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Fail" library="BuiltIn">
+<arg>SEARCH_CONTACT_FAILED</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<msg timestamp="20220520 19:37:03.980" level="FAIL">SEARCH_CONTACT_FAILED</msg>
+<status status="FAIL" starttime="20220520 19:37:03.979" endtime="20220520 19:37:03.980"/>
+</kw>
+<status status="FAIL" starttime="20220520 19:37:03.978" endtime="20220520 19:37:03.981"/>
+</kw>
+<kw name="END TEST" library="base_lib" type="TEARDOWN">
+<msg timestamp="20220520 19:37:15.325" level="INFO">coral
+
+coral</msg>
+<status status="PASS" starttime="20220520 19:37:03.981" endtime="20220520 19:37:15.325"/>
+</kw>
+<tag>Sanity</tag>
+<status status="FAIL" starttime="20220520 19:36:24.487" endtime="20220520 19:37:15.326">SEARCH_CONTACT_FAILED</status>
+</test>
+<test id="s1-s1-t3" name="Test_003 - EDIT CONTACT NAME" line="49">
+<kw name="START TEST" library="base_lib" type="SETUP">
+<status status="PASS" starttime="20220520 19:37:15.328" endtime="20220520 19:37:21.344"/>
+</kw>
+<kw name="LAUNCH CONTACTS" library="contacts_lib">
+<var>${result}</var>
+<msg timestamp="20220520 19:37:31.740" level="INFO">Launching Contacts</msg>
+<msg timestamp="20220520 19:37:31.740" level="INFO">${result} = True</msg>
+<status status="PASS" starttime="20220520 19:37:21.344" endtime="20220520 19:37:31.740"/>
+</kw>
+<kw name="EDIT CONTACT NAME" library="contacts_lib">
+<var>${result}</var>
+<arg>${contact2_name}</arg>
+<arg>${changed_name}</arg>
+<msg timestamp="20220520 19:38:17.697" level="INFO">Exception occured JsonRPC Error code: -32002, Message: androidx.test.uiautomator.UiObjectNotFoundException: UiSelector[CLASS=android.widget.TextView, RESOURCE_ID=com.android.contacts:id/menu_search]
+Exception occured JsonRPC Error code: -32002, Message: androidx.test.uiautomator.UiObjectNotFoundException: UiSelector[TEXT=abc, CLASS=android.widget.TextView]</msg>
+<msg timestamp="20220520 19:38:17.697" level="INFO">${result} = False</msg>
+<status status="PASS" starttime="20220520 19:37:31.741" endtime="20220520 19:38:17.697"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${result}==False</arg>
+<arg>Fail</arg>
+<arg>EDIT_CONTACT_FAILED</arg>
+<arg>ELSE</arg>
+<arg>LOG</arg>
+<arg>PASS</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Fail" library="BuiltIn">
+<arg>EDIT_CONTACT_FAILED</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<msg timestamp="20220520 19:38:17.699" level="FAIL">EDIT_CONTACT_FAILED</msg>
+<status status="FAIL" starttime="20220520 19:38:17.698" endtime="20220520 19:38:17.699"/>
+</kw>
+<status status="FAIL" starttime="20220520 19:38:17.698" endtime="20220520 19:38:17.700"/>
+</kw>
+<kw name="END TEST" library="base_lib" type="TEARDOWN">
+<msg timestamp="20220520 19:38:29.024" level="INFO">coral
+
+coral</msg>
+<status status="PASS" starttime="20220520 19:38:17.701" endtime="20220520 19:38:29.025"/>
+</kw>
+<tag>Sanity</tag>
+<status status="FAIL" starttime="20220520 19:37:15.327" endtime="20220520 19:38:29.026">EDIT_CONTACT_FAILED</status>
+</test>
+<test id="s1-s1-t4" name="Test_004 - EDIT CONTACT NUMBER" line="55">
+<kw name="START TEST" library="base_lib" type="SETUP">
+<status status="PASS" starttime="20220520 19:38:29.028" endtime="20220520 19:38:35.044"/>
+</kw>
+<kw name="LAUNCH CONTACTS" library="contacts_lib">
+<var>${result}</var>
+<msg timestamp="20220520 19:38:45.216" level="INFO">Launching Contacts</msg>
+<msg timestamp="20220520 19:38:45.216" level="INFO">${result} = True</msg>
+<status status="PASS" starttime="20220520 19:38:35.044" endtime="20220520 19:38:45.216"/>
+</kw>
+<kw name="EDIT CONTACT NUMBER" library="contacts_lib">
+<var>${result}</var>
+<arg>${contact1_name}</arg>
+<arg>${changed_number}</arg>
+<msg timestamp="20220520 19:39:31.073" level="INFO">Exception occured JsonRPC Error code: -32002, Message: androidx.test.uiautomator.UiObjectNotFoundException: UiSelector[CLASS=android.widget.TextView, RESOURCE_ID=com.android.contacts:id/menu_search]
+Exception occured JsonRPC Error code: -32002, Message: androidx.test.uiautomator.UiObjectNotFoundException: UiSelector[TEXT=xyz, CLASS=android.widget.TextView]</msg>
+<msg timestamp="20220520 19:39:31.074" level="INFO">${result} = False</msg>
+<status status="PASS" starttime="20220520 19:38:45.217" endtime="20220520 19:39:31.074"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${result}==False</arg>
+<arg>Fail</arg>
+<arg>EDIT_CONTACT_FAILED</arg>
+<arg>ELSE</arg>
+<arg>LOG</arg>
+<arg>PASS</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Fail" library="BuiltIn">
+<arg>EDIT_CONTACT_FAILED</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<msg timestamp="20220520 19:39:31.076" level="FAIL">EDIT_CONTACT_FAILED</msg>
+<status status="FAIL" starttime="20220520 19:39:31.075" endtime="20220520 19:39:31.076"/>
+</kw>
+<status status="FAIL" starttime="20220520 19:39:31.074" endtime="20220520 19:39:31.076"/>
+</kw>
+<kw name="END TEST" library="base_lib" type="TEARDOWN">
+<msg timestamp="20220520 19:39:42.191" level="INFO">coral
+
+coral</msg>
+<status status="PASS" starttime="20220520 19:39:31.077" endtime="20220520 19:39:42.192"/>
+</kw>
+<tag>Sanity</tag>
+<status status="FAIL" starttime="20220520 19:38:29.027" endtime="20220520 19:39:42.192">EDIT_CONTACT_FAILED</status>
+</test>
+<test id="s1-s1-t5" name="Test_005 - EXPORT CONTACT" line="62">
+<kw name="START TEST" library="base_lib" type="SETUP">
+<status status="PASS" starttime="20220520 19:39:42.194" endtime="20220520 19:39:48.210"/>
+</kw>
+<kw name="LAUNCH CONTACTS" library="contacts_lib">
+<var>${result}</var>
+<msg timestamp="20220520 19:39:58.532" level="INFO">Launching Contacts</msg>
+<msg timestamp="20220520 19:39:58.532" level="INFO">${result} = True</msg>
+<status status="PASS" starttime="20220520 19:39:48.211" endtime="20220520 19:39:58.532"/>
+</kw>
+<kw name="EXPORT CONTACTS" library="contacts_lib">
+<var>${result}</var>
+<msg timestamp="20220520 19:40:25.467" level="INFO">Exception occured JsonRPC Error code: -32002, Message: androidx.test.uiautomator.UiObjectNotFoundException: UiSelector[CLASS=android.widget.LinearLayout, RESOURCE_ID=com.android.contacts:id/nav_settings]</msg>
+<msg timestamp="20220520 19:40:25.467" level="INFO">${result} = False</msg>
+<status status="PASS" starttime="20220520 19:39:58.533" endtime="20220520 19:40:25.467"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${result}==False</arg>
+<arg>Fail</arg>
+<arg>EXPORT_CONTACT_FAILED</arg>
+<arg>ELSE</arg>
+<arg>LOG</arg>
+<arg>PASS</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Fail" library="BuiltIn">
+<arg>EXPORT_CONTACT_FAILED</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<msg timestamp="20220520 19:40:25.469" level="FAIL">EXPORT_CONTACT_FAILED</msg>
+<status status="FAIL" starttime="20220520 19:40:25.468" endtime="20220520 19:40:25.469"/>
+</kw>
+<status status="FAIL" starttime="20220520 19:40:25.467" endtime="20220520 19:40:25.470"/>
+</kw>
+<kw name="END TEST" library="base_lib" type="TEARDOWN">
+<msg timestamp="20220520 19:40:36.476" level="INFO">coral
+
+coral</msg>
+<status status="PASS" starttime="20220520 19:40:25.471" endtime="20220520 19:40:36.476"/>
+</kw>
+<tag>Sanity</tag>
+<status status="FAIL" starttime="20220520 19:39:42.193" endtime="20220520 19:40:36.477">EXPORT_CONTACT_FAILED</status>
+</test>
+<test id="s1-s1-t6" name="Test_006 - IMPORT CONTACTS" line="69">
+<kw name="START TEST" library="base_lib" type="SETUP">
+<status status="PASS" starttime="20220520 19:40:36.479" endtime="20220520 19:40:42.492"/>
+</kw>
+<kw name="LAUNCH CONTACTS" library="contacts_lib">
+<var>${result}</var>
+<msg timestamp="20220520 19:40:52.828" level="INFO">Launching Contacts</msg>
+<msg timestamp="20220520 19:40:52.828" level="INFO">${result} = True</msg>
+<status status="PASS" starttime="20220520 19:40:42.492" endtime="20220520 19:40:52.828"/>
+</kw>
+<kw name="IMPORT CONTACTS" library="contacts_lib">
+<var>${result}</var>
+<msg timestamp="20220520 19:41:19.569" level="INFO">Exception occured JsonRPC Error code: -32002, Message: androidx.test.uiautomator.UiObjectNotFoundException: UiSelector[CLASS=android.widget.LinearLayout, RESOURCE_ID=com.android.contacts:id/nav_settings]</msg>
+<msg timestamp="20220520 19:41:19.569" level="INFO">${result} = False</msg>
+<status status="PASS" starttime="20220520 19:40:52.829" endtime="20220520 19:41:19.570"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${result}==False</arg>
+<arg>Fail</arg>
+<arg>IMPORT_CONTACT_FAILED</arg>
+<arg>ELSE</arg>
+<arg>LOG</arg>
+<arg>PASS</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Fail" library="BuiltIn">
+<arg>IMPORT_CONTACT_FAILED</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<msg timestamp="20220520 19:41:19.572" level="FAIL">IMPORT_CONTACT_FAILED</msg>
+<status status="FAIL" starttime="20220520 19:41:19.571" endtime="20220520 19:41:19.572"/>
+</kw>
+<status status="FAIL" starttime="20220520 19:41:19.570" endtime="20220520 19:41:19.572"/>
+</kw>
+<kw name="END TEST" library="base_lib" type="TEARDOWN">
+<msg timestamp="20220520 19:41:30.870" level="INFO">coral
+
+coral</msg>
+<status status="PASS" starttime="20220520 19:41:19.573" endtime="20220520 19:41:30.870"/>
+</kw>
+<tag>Sanity</tag>
+<status status="FAIL" starttime="20220520 19:40:36.478" endtime="20220520 19:41:30.871">IMPORT_CONTACT_FAILED</status>
+</test>
+<test id="s1-s1-t7" name="Test_007 - SEND TEXT MESSAGE" line="76">
+<kw name="START TEST" library="base_lib" type="SETUP">
+<status status="PASS" starttime="20220520 19:41:30.873" endtime="20220520 19:41:36.888"/>
+</kw>
+<kw name="LAUNCH CONTACTS" library="contacts_lib">
+<var>${result}</var>
+<msg timestamp="20220520 19:41:47.280" level="INFO">Launching Contacts</msg>
+<msg timestamp="20220520 19:41:47.280" level="INFO">${result} = True</msg>
+<status status="PASS" starttime="20220520 19:41:36.888" endtime="20220520 19:41:47.280"/>
+</kw>
+<kw name="SEND MESSAGE" library="contacts_lib">
+<var>${result}</var>
+<arg>${contact1_name}</arg>
+<arg>${message}</arg>
+<msg timestamp="20220520 19:42:33.186" level="INFO">Exception occured JsonRPC Error code: -32002, Message: androidx.test.uiautomator.UiObjectNotFoundException: UiSelector[CLASS=android.widget.TextView, RESOURCE_ID=com.android.contacts:id/menu_search]
+Exception occured JsonRPC Error code: -32002, Message: androidx.test.uiautomator.UiObjectNotFoundException: UiSelector[TEXT=xyz, CLASS=android.widget.TextView]</msg>
+<msg timestamp="20220520 19:42:33.187" level="INFO">${result} = False</msg>
+<status status="PASS" starttime="20220520 19:41:47.281" endtime="20220520 19:42:33.187"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${result}==False</arg>
+<arg>Fail</arg>
+<arg>MESSAGE_CONTACT_FAILED</arg>
+<arg>ELSE</arg>
+<arg>LOG</arg>
+<arg>PASS</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Fail" library="BuiltIn">
+<arg>MESSAGE_CONTACT_FAILED</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<msg timestamp="20220520 19:42:33.189" level="FAIL">MESSAGE_CONTACT_FAILED</msg>
+<status status="FAIL" starttime="20220520 19:42:33.188" endtime="20220520 19:42:33.189"/>
+</kw>
+<status status="FAIL" starttime="20220520 19:42:33.187" endtime="20220520 19:42:33.190"/>
+</kw>
+<kw name="END TEST" library="base_lib" type="TEARDOWN">
+<msg timestamp="20220520 19:42:44.447" level="INFO">coral
+
+coral</msg>
+<status status="PASS" starttime="20220520 19:42:33.191" endtime="20220520 19:42:44.448"/>
+</kw>
+<tag>Sanity</tag>
+<status status="FAIL" starttime="20220520 19:41:30.872" endtime="20220520 19:42:44.449">MESSAGE_CONTACT_FAILED</status>
+</test>
+<test id="s1-s1-t8" name="Test_008 - DELETE CONTACT" line="82">
+<kw name="START TEST" library="base_lib" type="SETUP">
+<status status="PASS" starttime="20220520 19:42:44.450" endtime="20220520 19:42:50.464"/>
+</kw>
+<kw name="LAUNCH CONTACTS" library="contacts_lib">
+<var>${result}</var>
+<msg timestamp="20220520 19:43:00.760" level="INFO">Launching Contacts</msg>
+<msg timestamp="20220520 19:43:00.760" level="INFO">${result} = True</msg>
+<status status="PASS" starttime="20220520 19:42:50.464" endtime="20220520 19:43:00.760"/>
+</kw>
+<kw name="DELETE CONTACT" library="contacts_lib">
+<var>${result}</var>
+<arg>${contact1_name}</arg>
+<msg timestamp="20220520 19:43:47.679" level="INFO">Exception occured JsonRPC Error code: -32002, Message: androidx.test.uiautomator.UiObjectNotFoundException: UiSelector[CLASS=android.widget.TextView, RESOURCE_ID=com.android.contacts:id/menu_search]
+Exception occured JsonRPC Error code: -32002, Message: androidx.test.uiautomator.UiObjectNotFoundException: UiSelector[TEXT=xyz, CLASS=android.widget.TextView]</msg>
+<msg timestamp="20220520 19:43:47.680" level="INFO">${result} = False</msg>
+<status status="PASS" starttime="20220520 19:43:00.761" endtime="20220520 19:43:47.680"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${result}==False</arg>
+<arg>Fail</arg>
+<arg>DELETE_CONTACT_FAILED</arg>
+<arg>ELSE</arg>
+<arg>LOG</arg>
+<arg>PASS</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Fail" library="BuiltIn">
+<arg>DELETE_CONTACT_FAILED</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<msg timestamp="20220520 19:43:47.682" level="FAIL">DELETE_CONTACT_FAILED</msg>
+<status status="FAIL" starttime="20220520 19:43:47.681" endtime="20220520 19:43:47.682"/>
+</kw>
+<status status="FAIL" starttime="20220520 19:43:47.680" endtime="20220520 19:43:47.682"/>
+</kw>
+<kw name="END TEST" library="base_lib" type="TEARDOWN">
+<msg timestamp="20220520 19:43:59.380" level="INFO">coral
+
+coral</msg>
+<status status="PASS" starttime="20220520 19:43:47.683" endtime="20220520 19:43:59.380"/>
+</kw>
+<tag>Sanity</tag>
+<status status="FAIL" starttime="20220520 19:42:44.449" endtime="20220520 19:43:59.381">DELETE_CONTACT_FAILED</status>
+</test>
+<doc>Sanity test</doc>
+<meta name="Build ID">QD1A.190821.007
+</meta>
+<meta name="Device Model">Pixel 4 XL
+</meta>
+<meta name="Device Name">coral
+</meta>
+<meta name="OS Version">10
+</meta>
+<status status="FAIL" starttime="20220520 19:35:08.522" endtime="20220520 19:43:59.383"/>
+</suite>
+<suite id="s1-s2" name="Multimedia Testcases" source="/home/idm/Desktop/HDK855/tests/multimedia_testcases.robot">
+<test id="s1-s2-t1" name="Test 001 - Play an audio music" line="13">
+<kw name="START TEST" library="base_lib" type="SETUP">
+<status status="PASS" starttime="20220520 19:43:59.395" endtime="20220520 19:44:05.416"/>
+</kw>
+<kw name="LAUNCH MUSIC" library="multimedia_lib">
+<var>${result}</var>
+<msg timestamp="20220520 19:44:21.320" level="INFO">coral
+
+coral</msg>
+<msg timestamp="20220520 19:44:21.321" level="INFO">${result} = True</msg>
+<status status="PASS" starttime="20220520 19:44:05.416" endtime="20220520 19:44:21.321"/>
+</kw>
+<kw name="PLAY MUSIC" library="multimedia_lib">
+<var>${result}</var>
+<msg timestamp="20220520 19:44:47.608" level="INFO">Exception Occured: JsonRPC Error code: -32002, Message: androidx.test.uiautomator.UiObjectNotFoundException: UiSelector[CLASS=android.widget.ImageView, RESOURCE_ID=org.videolan.vlc:id/media_cover]</msg>
+<msg timestamp="20220520 19:44:47.608" level="INFO">${result} = False</msg>
+<status status="PASS" starttime="20220520 19:44:21.321" endtime="20220520 19:44:47.609"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${result}==False</arg>
+<arg>Fail</arg>
+<arg>Playing_Music_Failed</arg>
+<arg>ELSE</arg>
+<arg>LOG</arg>
+<arg>PASS</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Fail" library="BuiltIn">
+<arg>Playing_Music_Failed</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<msg timestamp="20220520 19:44:47.611" level="FAIL">Playing_Music_Failed</msg>
+<status status="FAIL" starttime="20220520 19:44:47.610" endtime="20220520 19:44:47.611"/>
+</kw>
+<status status="FAIL" starttime="20220520 19:44:47.609" endtime="20220520 19:44:47.611"/>
+</kw>
+<kw name="END TEST" library="base_lib" type="TEARDOWN">
+<msg timestamp="20220520 19:44:59.230" level="INFO">coral
+
+coral</msg>
+<status status="PASS" starttime="20220520 19:44:47.612" endtime="20220520 19:44:59.231"/>
+</kw>
+<tag>Sanity</tag>
+<status status="FAIL" starttime="20220520 19:43:59.395" endtime="20220520 19:44:59.231">Playing_Music_Failed</status>
+</test>
+<test id="s1-s2-t2" name="Test 002 - Pause an audio music" line="21">
+<kw name="START TEST" library="base_lib" type="SETUP">
+<status status="PASS" starttime="20220520 19:44:59.234" endtime="20220520 19:45:05.250"/>
+</kw>
+<kw name="LAUNCH MUSIC" library="multimedia_lib">
+<var>${result}</var>
+<msg timestamp="20220520 19:45:09.582" level="INFO">${result} = True</msg>
+<status status="PASS" starttime="20220520 19:45:05.251" endtime="20220520 19:45:09.582"/>
+</kw>
+<kw name="PLAY MUSIC" library="multimedia_lib">
+<var>${result}</var>
+<msg timestamp="20220520 19:45:37.790" level="INFO">Exception Occured: JsonRPC Error code: -32002, Message: androidx.test.uiautomator.UiObjectNotFoundException: UiSelector[CLASS=android.widget.ImageView, RESOURCE_ID=org.videolan.vlc:id/media_cover]</msg>
+<msg timestamp="20220520 19:45:37.791" level="INFO">${result} = False</msg>
+<status status="PASS" starttime="20220520 19:45:09.583" endtime="20220520 19:45:37.791"/>
+</kw>
+<kw name="PAUSE MUSIC" library="multimedia_lib">
+<var>${result}</var>
+<msg timestamp="20220520 19:46:01.724" level="INFO">Exception Occured: JsonRPC Error code: -32002, Message: androidx.test.uiautomator.UiObjectNotFoundException: UiSelector[CLASS=android.widget.TextView, RESOURCE_ID=org.videolan.vlc:id/artist]</msg>
+<msg timestamp="20220520 19:46:01.724" level="INFO">${result} = False</msg>
+<status status="PASS" starttime="20220520 19:45:37.791" endtime="20220520 19:46:01.724"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${result}==False</arg>
+<arg>Fail</arg>
+<arg>Pausing_Music_Failed</arg>
+<arg>ELSE</arg>
+<arg>LOG</arg>
+<arg>PASS</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Fail" library="BuiltIn">
+<arg>Pausing_Music_Failed</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<msg timestamp="20220520 19:46:01.726" level="FAIL">Pausing_Music_Failed</msg>
+<status status="FAIL" starttime="20220520 19:46:01.725" endtime="20220520 19:46:01.726"/>
+</kw>
+<status status="FAIL" starttime="20220520 19:46:01.724" endtime="20220520 19:46:01.727"/>
+</kw>
+<kw name="END TEST" library="base_lib" type="TEARDOWN">
+<msg timestamp="20220520 19:46:13.480" level="INFO">coral
+
+coral</msg>
+<status status="PASS" starttime="20220520 19:46:01.728" endtime="20220520 19:46:13.481"/>
+</kw>
+<tag>Sanity</tag>
+<status status="FAIL" starttime="20220520 19:44:59.232" endtime="20220520 19:46:13.482">Pausing_Music_Failed</status>
+</test>
+<test id="s1-s2-t3" name="Test 003 - Next audio" line="30">
+<kw name="START TEST" library="base_lib" type="SETUP">
+<status status="PASS" starttime="20220520 19:46:13.484" endtime="20220520 19:46:19.500"/>
+</kw>
+<kw name="LAUNCH MUSIC" library="multimedia_lib">
+<var>${result}</var>
+<msg timestamp="20220520 19:46:23.829" level="INFO">${result} = True</msg>
+<status status="PASS" starttime="20220520 19:46:19.501" endtime="20220520 19:46:23.829"/>
+</kw>
+<kw name="PLAY MUSIC" library="multimedia_lib">
+<var>${result}</var>
+<msg timestamp="20220520 19:46:52.094" level="INFO">Exception Occured: JsonRPC Error code: -32002, Message: androidx.test.uiautomator.UiObjectNotFoundException: UiSelector[CLASS=android.widget.ImageView, RESOURCE_ID=org.videolan.vlc:id/media_cover]</msg>
+<msg timestamp="20220520 19:46:52.094" level="INFO">${result} = False</msg>
+<status status="PASS" starttime="20220520 19:46:23.829" endtime="20220520 19:46:52.095"/>
+</kw>
+<kw name="NEXT MUSIC" library="multimedia_lib">
+<var>${result}</var>
+<msg timestamp="20220520 19:47:15.877" level="INFO">Exception Occured: JsonRPC Error code: -32002, Message: androidx.test.uiautomator.UiObjectNotFoundException: UiSelector[CLASS=android.widget.ImageView, RESOURCE_ID=org.videolan.vlc:id/next]</msg>
+<msg timestamp="20220520 19:47:15.877" level="INFO">${result} = False</msg>
+<status status="PASS" starttime="20220520 19:46:52.095" endtime="20220520 19:47:15.877"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${result}==False</arg>
+<arg>Fail</arg>
+<arg>Playing_Next_Music_Failed</arg>
+<arg>ELSE</arg>
+<arg>LOG</arg>
+<arg>PASS</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Fail" library="BuiltIn">
+<arg>Playing_Next_Music_Failed</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<msg timestamp="20220520 19:47:15.879" level="FAIL">Playing_Next_Music_Failed</msg>
+<status status="FAIL" starttime="20220520 19:47:15.878" endtime="20220520 19:47:15.879"/>
+</kw>
+<status status="FAIL" starttime="20220520 19:47:15.877" endtime="20220520 19:47:15.879"/>
+</kw>
+<kw name="END TEST" library="base_lib" type="TEARDOWN">
+<msg timestamp="20220520 19:47:27.141" level="INFO">coral
+
+coral</msg>
+<status status="PASS" starttime="20220520 19:47:15.880" endtime="20220520 19:47:27.142"/>
+</kw>
+<tag>Sanity</tag>
+<status status="FAIL" starttime="20220520 19:46:13.483" endtime="20220520 19:47:27.143">Playing_Next_Music_Failed</status>
+</test>
+<test id="s1-s2-t4" name="Test 004 - Previous audio" line="39">
+<kw name="START TEST" library="base_lib" type="SETUP">
+<status status="PASS" starttime="20220520 19:47:27.145" endtime="20220520 19:47:33.162"/>
+</kw>
+<kw name="LAUNCH MUSIC" library="multimedia_lib">
+<var>${result}</var>
+<msg timestamp="20220520 19:47:37.514" level="INFO">${result} = True</msg>
+<status status="PASS" starttime="20220520 19:47:33.163" endtime="20220520 19:47:37.515"/>
+</kw>
+<kw name="PLAY MUSIC" library="multimedia_lib">
+<var>${result}</var>
+<msg timestamp="20220520 19:48:06.435" level="INFO">Exception Occured: JsonRPC Error code: -32002, Message: androidx.test.uiautomator.UiObjectNotFoundException: UiSelector[CLASS=android.widget.ImageView, RESOURCE_ID=org.videolan.vlc:id/media_cover]</msg>
+<msg timestamp="20220520 19:48:06.435" level="INFO">${result} = False</msg>
+<status status="PASS" starttime="20220520 19:47:37.515" endtime="20220520 19:48:06.435"/>
+</kw>
+<kw name="PREVIOUS MUSIC" library="multimedia_lib">
+<var>${result}</var>
+<msg timestamp="20220520 19:48:29.639" level="INFO">Exception Occured: JsonRPC Error code: -32002, Message: androidx.test.uiautomator.UiObjectNotFoundException: UiSelector[CLASS=android.widget.ImageView, RESOURCE_ID=org.videolan.vlc:id/previous]</msg>
+<msg timestamp="20220520 19:48:29.639" level="INFO">${result} = False</msg>
+<status status="PASS" starttime="20220520 19:48:06.436" endtime="20220520 19:48:29.639"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${result}==False</arg>
+<arg>Fail</arg>
+<arg>Playing_Previous_Music_Failed</arg>
+<arg>ELSE</arg>
+<arg>LOG</arg>
+<arg>PASS</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Fail" library="BuiltIn">
+<arg>Playing_Previous_Music_Failed</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<msg timestamp="20220520 19:48:29.641" level="FAIL">Playing_Previous_Music_Failed</msg>
+<status status="FAIL" starttime="20220520 19:48:29.640" endtime="20220520 19:48:29.642"/>
+</kw>
+<status status="FAIL" starttime="20220520 19:48:29.640" endtime="20220520 19:48:29.642"/>
+</kw>
+<kw name="END TEST" library="base_lib" type="TEARDOWN">
+<msg timestamp="20220520 19:48:40.947" level="INFO">coral
+
+coral</msg>
+<status status="PASS" starttime="20220520 19:48:29.643" endtime="20220520 19:48:40.947"/>
+</kw>
+<tag>Sanity</tag>
+<status status="FAIL" starttime="20220520 19:47:27.144" endtime="20220520 19:48:40.948">Playing_Previous_Music_Failed</status>
+</test>
+<test id="s1-s2-t5" name="Test 005 - Play a video" line="48">
+<kw name="START TEST" library="base_lib" type="SETUP">
+<status status="PASS" starttime="20220520 19:48:40.950" endtime="20220520 19:48:46.968"/>
+</kw>
+<kw name="LAUNCH VIDEO" library="multimedia_lib">
+<var>${result}</var>
+<msg timestamp="20220520 19:48:51.250" level="INFO">${result} = True</msg>
+<status status="PASS" starttime="20220520 19:48:46.968" endtime="20220520 19:48:51.250"/>
+</kw>
+<kw name="PLAY VIDEO" library="multimedia_lib">
+<var>${result}</var>
+<msg timestamp="20220520 19:49:04.472" level="INFO">${result} = True</msg>
+<status status="PASS" starttime="20220520 19:48:51.251" endtime="20220520 19:49:04.473"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${result}==False</arg>
+<arg>Fail</arg>
+<arg>Playing_Video_Failed</arg>
+<arg>ELSE</arg>
+<arg>LOG</arg>
+<arg>PASS</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Log" library="BuiltIn">
+<arg>PASS</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220520 19:49:04.474" level="INFO">PASS</msg>
+<status status="PASS" starttime="20220520 19:49:04.474" endtime="20220520 19:49:04.474"/>
+</kw>
+<status status="PASS" starttime="20220520 19:49:04.473" endtime="20220520 19:49:04.474"/>
+</kw>
+<kw name="END TEST" library="base_lib" type="TEARDOWN">
+<msg timestamp="20220520 19:49:16.632" level="INFO">coral
+
+coral</msg>
+<status status="PASS" starttime="20220520 19:49:04.475" endtime="20220520 19:49:16.633"/>
+</kw>
+<tag>Sanity</tag>
+<status status="PASS" starttime="20220520 19:48:40.949" endtime="20220520 19:49:16.633"/>
+</test>
+<test id="s1-s2-t6" name="Test 006 - Pause a video" line="57">
+<kw name="START TEST" library="base_lib" type="SETUP">
+<status status="PASS" starttime="20220520 19:49:16.635" endtime="20220520 19:49:22.652"/>
+</kw>
+<kw name="LAUNCH VIDEO" library="multimedia_lib">
+<var>${result}</var>
+<msg timestamp="20220520 19:49:26.933" level="INFO">${result} = True</msg>
+<status status="PASS" starttime="20220520 19:49:22.652" endtime="20220520 19:49:26.933"/>
+</kw>
+<kw name="PLAY VIDEO" library="multimedia_lib">
+<var>${result}</var>
+<msg timestamp="20220520 19:49:40.128" level="INFO">${result} = True</msg>
+<status status="PASS" starttime="20220520 19:49:26.934" endtime="20220520 19:49:40.128"/>
+</kw>
+<kw name="PAUSE VIDEO" library="multimedia_lib">
+<var>${result}</var>
+<msg timestamp="20220520 19:50:05.905" level="INFO">Exception Occured: JsonRPC Error code: -32002, Message: androidx.test.uiautomator.UiObjectNotFoundException: UiSelector[CLASS=android.widget.ImageView, RESOURCE_ID=video_play_pause_button_className]</msg>
+<msg timestamp="20220520 19:50:05.906" level="INFO">${result} = False</msg>
+<status status="PASS" starttime="20220520 19:49:40.128" endtime="20220520 19:50:05.906"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${result}==False</arg>
+<arg>Fail</arg>
+<arg>Pausing_Video_Failed</arg>
+<arg>ELSE</arg>
+<arg>LOG</arg>
+<arg>PASS</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Fail" library="BuiltIn">
+<arg>Pausing_Video_Failed</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<msg timestamp="20220520 19:50:05.908" level="FAIL">Pausing_Video_Failed</msg>
+<status status="FAIL" starttime="20220520 19:50:05.907" endtime="20220520 19:50:05.909"/>
+</kw>
+<status status="FAIL" starttime="20220520 19:50:05.907" endtime="20220520 19:50:05.909"/>
+</kw>
+<kw name="END TEST" library="base_lib" type="TEARDOWN">
+<msg timestamp="20220520 19:50:17.588" level="INFO">coral
+
+coral</msg>
+<status status="PASS" starttime="20220520 19:50:05.910" endtime="20220520 19:50:17.589"/>
+</kw>
+<tag>Sanity</tag>
+<status status="FAIL" starttime="20220520 19:49:16.634" endtime="20220520 19:50:17.589">Pausing_Video_Failed</status>
+</test>
+<test id="s1-s2-t7" name="Test 007 - Next" line="66">
+<kw name="START TEST" library="base_lib" type="SETUP">
+<status status="PASS" starttime="20220520 19:50:17.591" endtime="20220520 19:50:23.606"/>
+</kw>
+<kw name="video">
+<msg timestamp="20220520 19:50:23.610" level="FAIL">No keyword with name 'video' found. Did you mean:
+    multimedia_lib.PLAY VIDEO
+    multimedia_lib.NEXT VIDEO
+    multimedia_lib.PAUSE VIDEO</msg>
+<status status="FAIL" starttime="20220520 19:50:23.609" endtime="20220520 19:50:23.610"/>
+</kw>
+<kw name="LAUNCH VIDEO" library="multimedia_lib">
+<var>${result}</var>
+<status status="NOT RUN" starttime="20220520 19:50:23.610" endtime="20220520 19:50:23.610"/>
+</kw>
+<kw name="PLAY VIDEO" library="multimedia_lib">
+<var>${result}</var>
+<status status="NOT RUN" starttime="20220520 19:50:23.611" endtime="20220520 19:50:23.611"/>
+</kw>
+<kw name="NEXT VIDEO" library="multimedia_lib">
+<var>${result}</var>
+<status status="NOT RUN" starttime="20220520 19:50:23.611" endtime="20220520 19:50:23.611"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${result}==False</arg>
+<arg>Fail</arg>
+<arg>Playing_Next_Video_Failed</arg>
+<arg>ELSE</arg>
+<arg>LOG</arg>
+<arg>PASS</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" starttime="20220520 19:50:23.611" endtime="20220520 19:50:23.611"/>
+</kw>
+<kw name="END TEST" library="base_lib" type="TEARDOWN">
+<msg timestamp="20220520 19:50:28.851" level="INFO">coral
+
+coral</msg>
+<status status="PASS" starttime="20220520 19:50:23.612" endtime="20220520 19:50:28.852"/>
+</kw>
+<tag>Sanity</tag>
+<status status="FAIL" starttime="20220520 19:50:17.590" endtime="20220520 19:50:28.852">No keyword with name 'video' found. Did you mean:
+    multimedia_lib.PLAY VIDEO
+    multimedia_lib.NEXT VIDEO
+    multimedia_lib.PAUSE VIDEO</status>
+</test>
+<test id="s1-s2-t8" name="Test 008 - Previous video" line="75">
+<kw name="START TEST" library="base_lib" type="SETUP">
+<status status="PASS" starttime="20220520 19:50:28.854" endtime="20220520 19:50:34.872"/>
+</kw>
+<kw name="LAUNCH VIDEO" library="multimedia_lib">
+<var>${result}</var>
+<msg timestamp="20220520 19:50:39.187" level="INFO">${result} = True</msg>
+<status status="PASS" starttime="20220520 19:50:34.872" endtime="20220520 19:50:39.187"/>
+</kw>
+<kw name="PLAY VIDEO" library="multimedia_lib">
+<var>${result}</var>
+<msg timestamp="20220520 19:50:52.348" level="INFO">${result} = True</msg>
+<status status="PASS" starttime="20220520 19:50:39.188" endtime="20220520 19:50:52.348"/>
+</kw>
+<kw name="PREVIOUS VIDEO" library="multimedia_lib">
+<var>${result}</var>
+<msg timestamp="20220520 19:51:18.175" level="INFO">Exception Occured: JsonRPC Error code: -32002, Message: androidx.test.uiautomator.UiObjectNotFoundException: UiSelector[CLASS=android.widget.ImageView, RESOURCE_ID=video_play_pause_button_className]</msg>
+<msg timestamp="20220520 19:51:18.176" level="INFO">${result} = False</msg>
+<status status="PASS" starttime="20220520 19:50:52.349" endtime="20220520 19:51:18.176"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${result}==False</arg>
+<arg>Fail</arg>
+<arg>Playing_Previous_Video_Failed</arg>
+<arg>ELSE</arg>
+<arg>LOG</arg>
+<arg>PASS</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Fail" library="BuiltIn">
+<arg>Playing_Previous_Video_Failed</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<msg timestamp="20220520 19:51:18.178" level="FAIL">Playing_Previous_Video_Failed</msg>
+<status status="FAIL" starttime="20220520 19:51:18.177" endtime="20220520 19:51:18.178"/>
+</kw>
+<status status="FAIL" starttime="20220520 19:51:18.176" endtime="20220520 19:51:18.179"/>
+</kw>
+<kw name="END TEST" library="base_lib" type="TEARDOWN">
+<msg timestamp="20220520 19:51:29.610" level="INFO">coral
+
+coral</msg>
+<status status="PASS" starttime="20220520 19:51:18.180" endtime="20220520 19:51:29.610"/>
+</kw>
+<tag>Sanity</tag>
+<status status="FAIL" starttime="20220520 19:50:28.853" endtime="20220520 19:51:29.611">Playing_Previous_Video_Failed</status>
+</test>
+<test id="s1-s2-t9" name="Test 009 - Play an audio and then open browser" line="84">
+<kw name="START TEST" library="base_lib" type="SETUP">
+<status status="PASS" starttime="20220520 19:51:29.613" endtime="20220520 19:51:35.632"/>
+</kw>
+<kw name="[tags] Sanity">
+<msg timestamp="20220520 19:51:35.636" level="FAIL">No keyword with name '[tags] Sanity' found.</msg>
+<status status="FAIL" starttime="20220520 19:51:35.636" endtime="20220520 19:51:35.636"/>
+</kw>
+<kw name="${result} LAUNCH_MUSIC">
+<status status="NOT RUN" starttime="20220520 19:51:35.638" endtime="20220520 19:51:35.638"/>
+</kw>
+<kw name="${result} GOTO_HOME">
+<status status="NOT RUN" starttime="20220520 19:51:35.639" endtime="20220520 19:51:35.639"/>
+</kw>
+<kw name="${result} LAUNCH_BROWSER">
+<status status="NOT RUN" starttime="20220520 19:51:35.640" endtime="20220520 19:51:35.640"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${result}==False</arg>
+<arg>Fail</arg>
+<arg>Launch_Browser_Failed</arg>
+<arg>ELSE</arg>
+<arg>LOG</arg>
+<arg>PASS</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" starttime="20220520 19:51:35.640" endtime="20220520 19:51:35.640"/>
+</kw>
+<kw name="END TEST" library="base_lib" type="TEARDOWN">
+<msg timestamp="20220520 19:51:40.890" level="INFO">coral
+
+coral</msg>
+<status status="PASS" starttime="20220520 19:51:35.640" endtime="20220520 19:51:40.890"/>
+</kw>
+<status status="FAIL" starttime="20220520 19:51:29.612" endtime="20220520 19:51:40.891">No keyword with name '[tags] Sanity' found.</status>
+</test>
+<status status="FAIL" starttime="20220520 19:43:59.386" endtime="20220520 19:51:40.892"/>
+</suite>
+<suite id="s1-s3" name="Settings Testcases" source="/home/idm/Desktop/HDK855/tests/settings_testcases.robot">
+<kw name="Initialize Metadata" type="SETUP">
+<kw name="GET DEVICE MODEL" library="base_lib">
+<var>${devicemodel}</var>
+<msg timestamp="20220520 19:51:40.918" level="INFO">${devicemodel} = Pixel 4 XL
+</msg>
+<status status="PASS" starttime="20220520 19:51:40.898" endtime="20220520 19:51:40.918"/>
+</kw>
+<kw name="Set Suite Metadata" library="BuiltIn">
+<arg>Device Model</arg>
+<arg>${devicemodel}</arg>
+<doc>Sets metadata for the current test suite.</doc>
+<msg timestamp="20220520 19:51:40.920" level="INFO">Set suite metadata 'Device Model' to value 'Pixel 4 XL
+'.</msg>
+<status status="PASS" starttime="20220520 19:51:40.919" endtime="20220520 19:51:40.921"/>
+</kw>
+<kw name="GET ANDROID VERSION" library="base_lib">
+<var>${Android_ver}</var>
+<msg timestamp="20220520 19:51:40.939" level="INFO">${Android_ver} = 10
+</msg>
+<status status="PASS" starttime="20220520 19:51:40.921" endtime="20220520 19:51:40.940"/>
+</kw>
+<kw name="Set Suite Metadata" library="BuiltIn">
+<arg>OS Version</arg>
+<arg>${Android_ver}</arg>
+<doc>Sets metadata for the current test suite.</doc>
+<msg timestamp="20220520 19:51:40.941" level="INFO">Set suite metadata 'OS Version' to value '10
+'.</msg>
+<status status="PASS" starttime="20220520 19:51:40.940" endtime="20220520 19:51:40.941"/>
+</kw>
+<kw name="GET BUILD ID" library="base_lib">
+<var>${build_id}</var>
+<msg timestamp="20220520 19:51:40.961" level="INFO">${build_id} = QD1A.190821.007
+</msg>
+<status status="PASS" starttime="20220520 19:51:40.941" endtime="20220520 19:51:40.961"/>
+</kw>
+<kw name="Set Suite Metadata" library="BuiltIn">
+<arg>Build ID</arg>
+<arg>${build_id}</arg>
+<doc>Sets metadata for the current test suite.</doc>
+<msg timestamp="20220520 19:51:40.962" level="INFO">Set suite metadata 'Build ID' to value 'QD1A.190821.007
+'.</msg>
+<status status="PASS" starttime="20220520 19:51:40.961" endtime="20220520 19:51:40.962"/>
+</kw>
+<status status="PASS" starttime="20220520 19:51:40.897" endtime="20220520 19:51:40.963"/>
+</kw>
+<test id="s1-s3-t1" name="Test 001 - Enable Wifi" line="23">
+<kw name="START TEST" library="base_lib" type="SETUP">
+<status status="PASS" starttime="20220520 19:51:40.964" endtime="20220520 19:51:46.980"/>
+</kw>
+<kw name="LAUNCH SETTINGS" library="settings_lib">
+<var>${result}</var>
+<msg timestamp="20220520 19:52:02.699" level="INFO">coral
+
+coral</msg>
+<msg timestamp="20220520 19:52:02.700" level="INFO">${result} = True</msg>
+<status status="PASS" starttime="20220520 19:51:46.980" endtime="20220520 19:52:02.700"/>
+</kw>
+<kw name="ENABLE WIFI" library="settings_lib">
+<var>${result}</var>
+<msg timestamp="20220520 19:52:18.696" level="INFO">False</msg>
+<msg timestamp="20220520 19:52:18.697" level="INFO">${result} = True</msg>
+<status status="PASS" starttime="20220520 19:52:02.701" endtime="20220520 19:52:18.697"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${result}==False</arg>
+<arg>Fail</arg>
+<arg>Enabling_Wifi_Failed</arg>
+<arg>ELSE</arg>
+<arg>LOG</arg>
+<arg>PASS</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Log" library="BuiltIn">
+<arg>PASS</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220520 19:52:18.699" level="INFO">PASS</msg>
+<status status="PASS" starttime="20220520 19:52:18.699" endtime="20220520 19:52:18.699"/>
+</kw>
+<status status="PASS" starttime="20220520 19:52:18.698" endtime="20220520 19:52:18.699"/>
+</kw>
+<kw name="END TEST" library="base_lib" type="TEARDOWN">
+<msg timestamp="20220520 19:52:29.914" level="INFO">coral
+
+coral</msg>
+<status status="PASS" starttime="20220520 19:52:18.700" endtime="20220520 19:52:29.914"/>
+</kw>
+<tag>Sanity</tag>
+<status status="PASS" starttime="20220520 19:51:40.963" endtime="20220520 19:52:29.915"/>
+</test>
+<test id="s1-s3-t2" name="Test 002 - Enable Bluetooth" line="31">
+<kw name="START TEST" library="base_lib" type="SETUP">
+<status status="PASS" starttime="20220520 19:52:29.917" endtime="20220520 19:52:35.932"/>
+</kw>
+<kw name="LAUNCH SETTINGS" library="settings_lib">
+<var>${result}</var>
+<msg timestamp="20220520 19:52:40.291" level="INFO">${result} = True</msg>
+<status status="PASS" starttime="20220520 19:52:35.932" endtime="20220520 19:52:40.291"/>
+</kw>
+<kw name="ENABLE BLUETOOTH" library="settings_lib">
+<var>${result}</var>
+<msg timestamp="20220520 19:52:58.596" level="INFO">${result} = True</msg>
+<status status="PASS" starttime="20220520 19:52:40.292" endtime="20220520 19:52:58.596"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${result}==False</arg>
+<arg>Fail</arg>
+<arg>Enabling_Bluetooth_Failed</arg>
+<arg>ELSE</arg>
+<arg>LOG</arg>
+<arg>PASS</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Log" library="BuiltIn">
+<arg>PASS</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220520 19:52:58.598" level="INFO">PASS</msg>
+<status status="PASS" starttime="20220520 19:52:58.598" endtime="20220520 19:52:58.598"/>
+</kw>
+<status status="PASS" starttime="20220520 19:52:58.597" endtime="20220520 19:52:58.598"/>
+</kw>
+<kw name="END TEST" library="base_lib" type="TEARDOWN">
+<msg timestamp="20220520 19:53:09.728" level="INFO">coral
+
+coral</msg>
+<status status="PASS" starttime="20220520 19:52:58.599" endtime="20220520 19:53:09.729"/>
+</kw>
+<tag>Sanity</tag>
+<status status="PASS" starttime="20220520 19:52:29.916" endtime="20220520 19:53:09.729"/>
+</test>
+<test id="s1-s3-t3" name="Test 003 - Disable Wifi" line="39">
+<kw name="START TEST" library="base_lib" type="SETUP">
+<status status="PASS" starttime="20220520 19:53:09.732" endtime="20220520 19:53:15.744"/>
+</kw>
+<kw name="LAUNCH SETTINGS" library="settings_lib">
+<var>${result}</var>
+<msg timestamp="20220520 19:53:20.080" level="INFO">${result} = True</msg>
+<status status="PASS" starttime="20220520 19:53:15.744" endtime="20220520 19:53:20.080"/>
+</kw>
+<kw name="DISABLE WIFI" library="settings_lib">
+<var>${result}</var>
+<msg timestamp="20220520 19:53:33.052" level="INFO">${result} = True</msg>
+<status status="PASS" starttime="20220520 19:53:20.080" endtime="20220520 19:53:33.052"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${result}==False</arg>
+<arg>Fail</arg>
+<arg>Disabling_Wifi_Failed</arg>
+<arg>ELSE</arg>
+<arg>LOG</arg>
+<arg>PASS</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Log" library="BuiltIn">
+<arg>PASS</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220520 19:53:33.054" level="INFO">PASS</msg>
+<status status="PASS" starttime="20220520 19:53:33.054" endtime="20220520 19:53:33.054"/>
+</kw>
+<status status="PASS" starttime="20220520 19:53:33.053" endtime="20220520 19:53:33.054"/>
+</kw>
+<kw name="END TEST" library="base_lib" type="TEARDOWN">
+<msg timestamp="20220520 19:53:44.191" level="INFO">coral
+
+coral</msg>
+<status status="PASS" starttime="20220520 19:53:33.055" endtime="20220520 19:53:44.191"/>
+</kw>
+<tag>Sanity</tag>
+<status status="PASS" starttime="20220520 19:53:09.730" endtime="20220520 19:53:44.192"/>
+</test>
+<test id="s1-s3-t4" name="Test 004 - Disable Bluetooth" line="47">
+<kw name="START TEST" library="base_lib" type="SETUP">
+<status status="PASS" starttime="20220520 19:53:44.194" endtime="20220520 19:53:50.208"/>
+</kw>
+<kw name="LAUNCH SETTINGS" library="settings_lib">
+<var>${result}</var>
+<msg timestamp="20220520 19:53:54.493" level="INFO">${result} = True</msg>
+<status status="PASS" starttime="20220520 19:53:50.209" endtime="20220520 19:53:54.493"/>
+</kw>
+<kw name="DISABLE BLUETOOTH" library="settings_lib">
+<var>${result}</var>
+<msg timestamp="20220520 19:54:13.205" level="INFO">${result} = True</msg>
+<status status="PASS" starttime="20220520 19:53:54.493" endtime="20220520 19:54:13.205"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${result}==False</arg>
+<arg>Fail</arg>
+<arg>Disabling_Bluetooth_Failed</arg>
+<arg>ELSE</arg>
+<arg>LOG</arg>
+<arg>PASS</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Log" library="BuiltIn">
+<arg>PASS</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220520 19:54:13.208" level="INFO">PASS</msg>
+<status status="PASS" starttime="20220520 19:54:13.207" endtime="20220520 19:54:13.208"/>
+</kw>
+<status status="PASS" starttime="20220520 19:54:13.206" endtime="20220520 19:54:13.208"/>
+</kw>
+<kw name="END TEST" library="base_lib" type="TEARDOWN">
+<msg timestamp="20220520 19:54:24.416" level="INFO">coral
+
+coral</msg>
+<status status="PASS" starttime="20220520 19:54:13.208" endtime="20220520 19:54:24.416"/>
+</kw>
+<tag>Sanity</tag>
+<status status="PASS" starttime="20220520 19:53:44.193" endtime="20220520 19:54:24.416"/>
+</test>
+<test id="s1-s3-t5" name="Test 005 - Check for Battery Saver option in Quick Settings and Click on it" line="55">
+<kw name="START TEST" library="base_lib" type="SETUP">
+<status status="PASS" starttime="20220520 19:54:24.419" endtime="20220520 19:54:30.432"/>
+</kw>
+<kw name="OPEN QUICK SETTINGS" library="settings_lib">
+<var>${result}</var>
+<msg timestamp="20220520 19:54:30.456" level="INFO">${result} = True</msg>
+<status status="PASS" starttime="20220520 19:54:30.432" endtime="20220520 19:54:30.456"/>
+</kw>
+<kw name="VERIFY BATTERY SAVER OPTION AND CLICK" library="settings_lib">
+<var>${result}</var>
+<msg timestamp="20220520 19:54:40.253" level="INFO">${result} = True</msg>
+<status status="PASS" starttime="20220520 19:54:30.457" endtime="20220520 19:54:40.253"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${result}==False</arg>
+<arg>Fail</arg>
+<arg>Verifying_Battery_Saver_Failed</arg>
+<arg>ELSE</arg>
+<arg>LOG</arg>
+<arg>PASS</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Log" library="BuiltIn">
+<arg>PASS</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220520 19:54:40.255" level="INFO">PASS</msg>
+<status status="PASS" starttime="20220520 19:54:40.254" endtime="20220520 19:54:40.255"/>
+</kw>
+<status status="PASS" starttime="20220520 19:54:40.253" endtime="20220520 19:54:40.255"/>
+</kw>
+<kw name="END TEST" library="base_lib" type="TEARDOWN">
+<msg timestamp="20220520 19:54:45.585" level="INFO">coral
+
+coral</msg>
+<status status="PASS" starttime="20220520 19:54:40.255" endtime="20220520 19:54:45.586"/>
+</kw>
+<tag>Sanity</tag>
+<status status="PASS" starttime="20220520 19:54:24.418" endtime="20220520 19:54:45.586"/>
+</test>
+<test id="s1-s3-t6" name="Test 006 - Enable Adaptive Brightness" line="68">
+<kw name="START TEST" library="base_lib" type="SETUP">
+<status status="PASS" starttime="20220520 19:54:45.588" endtime="20220520 19:54:51.608"/>
+</kw>
+<kw name="LAUNCH SETTINGS" library="settings_lib">
+<var>${result}</var>
+<msg timestamp="20220520 19:54:55.935" level="INFO">${result} = True</msg>
+<status status="PASS" starttime="20220520 19:54:51.608" endtime="20220520 19:54:55.935"/>
+</kw>
+<kw name="ENABLE ADAPTIVE BRIGHTNESS" library="settings_lib">
+<var>${result}</var>
+<msg timestamp="20220520 19:55:05.940" level="INFO">${result} = True</msg>
+<status status="PASS" starttime="20220520 19:54:55.935" endtime="20220520 19:55:05.940"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${result}==False</arg>
+<arg>Fail</arg>
+<arg>Enabling_Adaptive_Brightness_failed</arg>
+<arg>ELSE</arg>
+<arg>LOG</arg>
+<arg>PASS</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Log" library="BuiltIn">
+<arg>PASS</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220520 19:55:05.942" level="INFO">PASS</msg>
+<status status="PASS" starttime="20220520 19:55:05.941" endtime="20220520 19:55:05.942"/>
+</kw>
+<status status="PASS" starttime="20220520 19:55:05.941" endtime="20220520 19:55:05.942"/>
+</kw>
+<kw name="END TEST" library="base_lib" type="TEARDOWN">
+<msg timestamp="20220520 19:55:17.174" level="INFO">coral
+
+coral</msg>
+<status status="PASS" starttime="20220520 19:55:05.943" endtime="20220520 19:55:17.174"/>
+</kw>
+<tag>Sanity</tag>
+<status status="PASS" starttime="20220520 19:54:45.587" endtime="20220520 19:55:17.175"/>
+</test>
+<test id="s1-s3-t7" name="Test 007 - Disable Adaptive Brightness" line="75">
+<kw name="START TEST" library="base_lib" type="SETUP">
+<status status="PASS" starttime="20220520 19:55:17.177" endtime="20220520 19:55:23.192"/>
+</kw>
+<kw name="LAUNCH SETTINGS" library="settings_lib">
+<var>${result}</var>
+<msg timestamp="20220520 19:55:27.563" level="INFO">${result} = True</msg>
+<status status="PASS" starttime="20220520 19:55:23.192" endtime="20220520 19:55:27.563"/>
+</kw>
+<kw name="DISABLE ADAPTIVE BRIGHTNESS" library="settings_lib">
+<var>${result}</var>
+<msg timestamp="20220520 19:55:37.132" level="INFO">${result} = True</msg>
+<status status="PASS" starttime="20220520 19:55:27.563" endtime="20220520 19:55:37.132"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${result}==False</arg>
+<arg>Fail</arg>
+<arg>Disabling_Adaptive_Brightness_failed</arg>
+<arg>ELSE</arg>
+<arg>LOG</arg>
+<arg>PASS</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Log" library="BuiltIn">
+<arg>PASS</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220520 19:55:37.134" level="INFO">PASS</msg>
+<status status="PASS" starttime="20220520 19:55:37.133" endtime="20220520 19:55:37.134"/>
+</kw>
+<status status="PASS" starttime="20220520 19:55:37.132" endtime="20220520 19:55:37.134"/>
+</kw>
+<kw name="END TEST" library="base_lib" type="TEARDOWN">
+<msg timestamp="20220520 19:55:48.350" level="INFO">coral
+
+coral</msg>
+<status status="PASS" starttime="20220520 19:55:37.134" endtime="20220520 19:55:48.351"/>
+</kw>
+<tag>Sanity</tag>
+<status status="PASS" starttime="20220520 19:55:17.176" endtime="20220520 19:55:48.351"/>
+</test>
+<doc>Sanity test</doc>
+<meta name="Build ID">QD1A.190821.007
+</meta>
+<meta name="Device Model">Pixel 4 XL
+</meta>
+<meta name="OS Version">10
+</meta>
+<status status="PASS" starttime="20220520 19:51:40.894" endtime="20220520 19:55:48.353"/>
+</suite>
+<suite id="s1-s4" name="Z Drozer" source="/home/idm/Desktop/HDK855/tests/z_drozer.robot">
+<kw name="Initialize Metadata" type="SETUP">
+<kw name="GET DEVICE MODEL" library="base_lib">
+<var>${devicemodel}</var>
+<msg timestamp="20220520 19:55:48.390" level="INFO">${devicemodel} = Pixel 4 XL
+</msg>
+<status status="PASS" starttime="20220520 19:55:48.368" endtime="20220520 19:55:48.390"/>
+</kw>
+<kw name="Set Suite Metadata" library="BuiltIn">
+<arg>Device Model</arg>
+<arg>${devicemodel}</arg>
+<doc>Sets metadata for the current test suite.</doc>
+<msg timestamp="20220520 19:55:48.391" level="INFO">Set suite metadata 'Device Model' to value 'Pixel 4 XL
+'.</msg>
+<status status="PASS" starttime="20220520 19:55:48.390" endtime="20220520 19:55:48.392"/>
+</kw>
+<kw name="GET ANDROID VERSION" library="base_lib">
+<var>${Android_ver}</var>
+<msg timestamp="20220520 19:55:48.413" level="INFO">${Android_ver} = 10
+</msg>
+<status status="PASS" starttime="20220520 19:55:48.392" endtime="20220520 19:55:48.413"/>
+</kw>
+<kw name="Set Suite Metadata" library="BuiltIn">
+<arg>OS Version</arg>
+<arg>${Android_ver}</arg>
+<doc>Sets metadata for the current test suite.</doc>
+<msg timestamp="20220520 19:55:48.415" level="INFO">Set suite metadata 'OS Version' to value '10
+'.</msg>
+<status status="PASS" starttime="20220520 19:55:48.414" endtime="20220520 19:55:48.415"/>
+</kw>
+<kw name="GET BUILD ID" library="base_lib">
+<var>${build_id}</var>
+<msg timestamp="20220520 19:55:48.436" level="INFO">${build_id} = QD1A.190821.007
+</msg>
+<status status="PASS" starttime="20220520 19:55:48.415" endtime="20220520 19:55:48.437"/>
+</kw>
+<kw name="Set Suite Metadata" library="BuiltIn">
+<arg>Build ID</arg>
+<arg>${build_id}</arg>
+<doc>Sets metadata for the current test suite.</doc>
+<msg timestamp="20220520 19:55:48.438" level="INFO">Set suite metadata 'Build ID' to value 'QD1A.190821.007
+'.</msg>
+<status status="PASS" starttime="20220520 19:55:48.437" endtime="20220520 19:55:48.438"/>
+</kw>
+<status status="PASS" starttime="20220520 19:55:48.368" endtime="20220520 19:55:48.438"/>
+</kw>
+<test id="s1-s4-t1" name="Test 001 - Launch Drozer" line="20">
+<kw name="LAUNCH DROZER" library="drozer_lib">
+<var>${result}</var>
+<msg timestamp="20220520 19:55:52.783" level="INFO">${result} = True</msg>
+<status status="PASS" starttime="20220520 19:55:48.439" endtime="20220520 19:55:52.783"/>
+</kw>
+<kw name="CHECK STATUS" library="drozer_lib">
+<var>${result}</var>
+<msg timestamp="20220520 19:55:54.844" level="INFO">${result} = None</msg>
+<status status="PASS" starttime="20220520 19:55:52.784" endtime="20220520 19:55:54.844"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${result}==False</arg>
+<arg>Fail</arg>
+<arg>Enabling_Wifi_Failed</arg>
+<arg>ELSE</arg>
+<arg>LOG</arg>
+<arg>PASS</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Log" library="BuiltIn">
+<arg>PASS</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220520 19:55:54.846" level="INFO">PASS</msg>
+<status status="PASS" starttime="20220520 19:55:54.846" endtime="20220520 19:55:54.846"/>
+</kw>
+<status status="PASS" starttime="20220520 19:55:54.845" endtime="20220520 19:55:54.846"/>
+</kw>
+<tag>Drozer app</tag>
+<status status="PASS" starttime="20220520 19:55:48.438" endtime="20220520 19:55:54.847"/>
+</test>
+<doc>Sanity test</doc>
+<meta name="Build ID">QD1A.190821.007
+</meta>
+<meta name="Device Model">Pixel 4 XL
+</meta>
+<meta name="OS Version">10
+</meta>
+<status status="PASS" starttime="20220520 19:55:48.355" endtime="20220520 19:55:54.848"/>
+</suite>
+<status status="FAIL" starttime="20220520 19:35:08.506" endtime="20220520 19:55:54.851"/>
+</suite>
+<statistics>
+<total>
+<stat pass="9" fail="16" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Drozer app</stat>
+<stat pass="8" fail="15" skip="0">Sanity</stat>
+</tag>
+<suite>
+<stat pass="9" fail="16" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="0" fail="8" skip="0" id="s1-s1" name="Contacts Testcases">Tests.Contacts Testcases</stat>
+<stat pass="1" fail="8" skip="0" id="s1-s2" name="Multimedia Testcases">Tests.Multimedia Testcases</stat>
+<stat pass="7" fail="0" skip="0" id="s1-s3" name="Settings Testcases">Tests.Settings Testcases</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s4" name="Z Drozer">Tests.Z Drozer</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
